@@ -34,6 +34,7 @@
       # Noctalia
       include current-theme.conf
       # END_KITTY_THEME
+      include ./themes/noctalia.conf
     '';
   };
  };
