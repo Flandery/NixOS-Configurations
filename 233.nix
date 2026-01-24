@@ -36,9 +36,10 @@
     splayer
     btop
     go-musicfox
-    vimPlugins.nvim-treesitter
-    vimPlugins.nvim-treesitter-textobjects
+#    vimPlugins.nvim-treesitter
+#    vimPlugins.nvim-treesitter-textobjects
     cava
+#    vimPlugins.lazy-nvim
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     # ... maybe other stuff
