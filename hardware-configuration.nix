@@ -22,7 +22,7 @@
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/02689b6e-3b03-40eb-be5f-236ef7b09b06";
       fsType = "btrfs";
-      options = [ "subvol=@FlandreScarletNixOS-Home" "noatime" "discard=async" "compress=zstd" ];
+      options = [ "subvol=@FlandreScarletNixOSHome" "noatime" "discard=async" "compress=zstd" ];
     };
 
   fileSystems."/boot" =
@@ -31,10 +31,10 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/Config" =
+  fileSystems."/FlanderyConfigurations" =
     { device = "/dev/disk/by-uuid/02689b6e-3b03-40eb-be5f-236ef7b09b06";
       fsType = "btrfs";
-      options = [ "subvol=@FlandreScarletNixOS-Config" ];
+      options = [ "subvol=@FlandreScarletNixOSConfig" ];
     };
 
   swapDevices = [ ];
