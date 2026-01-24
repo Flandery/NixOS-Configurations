@@ -32,6 +32,7 @@
     mangojuice
     vimPlugins.nvim-treesitter-parsers.cmake
     lutris
+    gcc
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     # ... maybe other stuff
