@@ -676,3 +676,8 @@ binds {
 }
 
 include "./noctalia.kdl"
+// Set the overview wallpaper on the backdrop.
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}

@@ -33,6 +33,8 @@
     #vimPlugins.nvim-treesitter-parsers.cmake
     lutris
     gcc
+    splayer
+    btop
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     # ... maybe other stuff
