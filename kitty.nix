@@ -30,9 +30,6 @@
     
     # 或者如果你想直接包含主题内容，可以这样：
     extraConfig = ''
-      # 导入颜色文件
-      include themes/frappe.conf
-      
       # BEGIN_KITTY_THEME
       # Noctalia
       include current-theme.conf
