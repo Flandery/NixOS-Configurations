@@ -12,8 +12,13 @@
         # 运行 fastfetch
         fastfetch
       '';
-   };
- 
+      shellAliases = {
+    # nvim 相关
+      nv = "nvim";
+      vim = "nvim";  # 将 vim 也指向 nvim
+      vi = "nvim";   # 将 vi 也指向 nvim
+      };
+     };
    # 声明式管理 Starship 提示符
     programs.starship = {
       enable = true;
