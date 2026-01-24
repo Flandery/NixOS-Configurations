@@ -30,7 +30,7 @@
     refine
     mangohud
     mangojuice
-    vimPlugins.nvim-treesitter-parsers.cmake
+    #vimPlugins.nvim-treesitter-parsers.cmake
     lutris
     gcc
 #    polkit_gnome
@@ -64,6 +64,7 @@
  users.defaultUserShell = pkgs.fish;
  programs.direnv.enable = true;
  programs.gamemode.enable = true;
+ zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
 # 启用自动垃圾收集
  nix.gc.automatic = true;
 # 设置清理选项：删除超过7天的旧世代
