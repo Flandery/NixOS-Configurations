@@ -26,6 +26,8 @@
     fuzzel
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     xwayland-satellite
+    gnome-tweaks
+    refine
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     # ... maybe other stuff

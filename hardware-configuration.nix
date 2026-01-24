@@ -37,6 +37,11 @@
       options = [ "subvol=@FlandreScarletNixOSConfig" ];
     };
 
+  fileSystems."/home/Flandre/FlandreGames" =                                                   
+    { device = "/dev/disk/by-uuid/02689b6e-3b03-40eb-be5f-236ef7b09b06";                       
+      fsType = "btrfs";                                                                        
+      options = [ "subvol=@ReimuGames" "noatime" "discard=async" "compress=zstd" ];                                                                                              
+    };   
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
