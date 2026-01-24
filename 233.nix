@@ -2,7 +2,7 @@
 {
  users.users.Flandre = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "gamemode" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
    #     tree
      ];
@@ -35,6 +35,10 @@
     gcc
     splayer
     btop
+    go-musicfox
+    vimPlugins.nvim-treesitter
+    vimPlugins.nvim-treesitter-textobjects
+    cava
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     # ... maybe other stuff
@@ -66,6 +70,12 @@
  users.defaultUserShell = pkgs.fish;
  programs.direnv.enable = true;
  programs.gamemode.enable = true;
+ programs.gamemode.settings = {
+  general = {
+    renice = 10;
+  };
+ };
+
  zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
 # 启用自动垃圾收集
  nix.gc.automatic = true;
@@ -140,7 +150,8 @@
 
 #Others
  services.power-profiles-daemon.enable = true;
- services.upower.enable = true;
+ programs.obs-studio.package = true;
+ #services.upower.enable = true;
 #Niri Config
  security.polkit.enable = true; # polkit
  services.gnome.gnome-keyring.enable = true; # secret service
