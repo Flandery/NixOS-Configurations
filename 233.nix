@@ -28,6 +28,8 @@
     xwayland-satellite
     gnome-tweaks
     refine
+    mangohud
+    mangojuice
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     # ... maybe other stuff
@@ -58,6 +60,7 @@
  networking.firewall.enable = false;
  users.defaultUserShell = pkgs.fish;
  programs.direnv.enable = true;
+ programs.gamemode.enable = true;
 # 启用自动垃圾收集
  nix.gc.automatic = true;
 # 设置清理选项：删除超过7天的旧世代

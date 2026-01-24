@@ -6,6 +6,20 @@
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
+
+cursor {
+    //鼠标的光标主题
+    xcursor-theme "Future-cursors"
+
+    //大小
+    xcursor-size 27
+
+    //闲置15s自动隐藏光标
+    hide-after-inactive-ms 15000
+
+}
+
+
 input {
     keyboard {
         xkb {
