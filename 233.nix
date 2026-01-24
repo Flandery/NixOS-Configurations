@@ -39,6 +39,7 @@
 #    vimPlugins.nvim-treesitter
 #    vimPlugins.nvim-treesitter-textobjects
     cava
+    obs-studio
 #    vimPlugins.lazy-nvim
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
@@ -151,7 +152,7 @@
 
 #Others
  services.power-profiles-daemon.enable = true;
- programs.obs-studio.package = true;
+ #programs.obs-studio.package = true;
  #services.upower.enable = true;
 #Niri Config
  security.polkit.enable = true; # polkit
