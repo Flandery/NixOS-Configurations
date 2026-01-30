@@ -43,6 +43,7 @@
 #    vimPlugins.lazy-nvim
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
+    btrfs-progs
     # ... maybe other stuff
   ];
 # services = {
@@ -235,5 +236,7 @@ nix.settings.auto-optimise-store = true;
  };
 # Tip: For improved gaming performance, you can also enable GameMode:
 # programs.gamemode.enable = true;
+ 
+ programs.nix-ld.enable = true;
 
 }
