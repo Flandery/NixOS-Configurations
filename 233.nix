@@ -2,7 +2,7 @@
 {
  users.users.Flandre = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "gamemode" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "gamemode" "networkmanager" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
    #     tree
      ];
@@ -50,10 +50,30 @@
 #  displayManager.sddm.enable = true;
 #  displayManager.sddm.wayland.enable = true;
 # };
+
+#图形界面
  services.displayManager.gdm.enable = true;
  services.desktopManager.gnome.enable = true;
  programs.niri.enable = true;  # 启用Niri Wayland合成器（作为GNOME的替代或补充）
+ services.xserver.enable = true;
 
+# Enable sound with pipewire.
+ services.pulseaudio.enable = false;
+ security.rtkit.enable = true;
+ services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+};
+
+#nix-channels源
  nix.settings = {
     substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"  # 添加中科大镜像源
@@ -61,6 +81,8 @@
     ];
     experimental-features = [ "nix-command" "flakes" ];  # 启用实验性功能：nix命令增强和flakes支持
   }; 
+ 
+#杂项
  nixpkgs.config.allowUnfree = true;
  programs.clash-verge.enable = true;
  programs.clash-verge.tunMode = true;
@@ -194,6 +216,7 @@ nix.settings.auto-optimise-store = true;
   enable = true; # Master switch, already covered in installation
   remotePlay.openFirewall = true;  # For Steam Remote Play
   dedicatedServer.openFirewall = true; # For Source Dedicated Server hosting
+  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   # Other general flags if available can be set here.
  };
 # Tip: For improved gaming performance, you can also enable GameMode:
