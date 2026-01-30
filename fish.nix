@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 {                                                                                                                                          
-  home-manager.users.Flandre = {                                                                                                           
      programs.fish = {
       enable = true;
      # 禁用 Fish 的欢迎信息
@@ -34,5 +33,4 @@
  #  home.packages = with pkgs; [ 
  #    fastfetch 
  #  ];
- };
 }

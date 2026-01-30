@@ -78,12 +78,30 @@
   };
  };
 
+#zram
  zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
+
 # 启用自动垃圾收集
- nix.gc.automatic = true;
+# ......
+# do not need to keep too much generations
+boot.loader.systemd-boot.configurationLimit = 10;
+# boot.loader.grub.configurationLimit = 10;
+# do garbage collection weekly to keep disk usage low
+nix.gc = {
+  automatic = true;
+  dates = "weekly";
+  options = "--delete-older-than 7d";
+};
+# Optimise storage
+# you can also optimise the store manually via:
+#    nix-store --optimise
+# https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
+nix.settings.auto-optimise-store = true;
+# nix.gc.automatic = true;
 # 设置清理选项：删除超过7天的旧世代
- nix.gc.options = "--delete-older-than 7d";
- nix.gc.dates = "weekly";
+# nix.gc.options = "--delete-older-than 7d";
+# nix.gc.dates = "weekly";
+
  # 启用必要的字体服务
  fonts.enableDefaultPackages = true; # 可选项：启用一些基础字体以获得基本的Unicode字符覆盖[citation:1]
  fonts.fontconfig.enable = true;
@@ -99,6 +117,7 @@
      };
    };
  };
+
 # 启用 Fcitx5 输入法
  i18n.inputMethod = {
    enable = true;
@@ -145,15 +164,17 @@
    # QT_IM_MODULE = "fcitx";
    XMODIFIERS = "@im=fcitx";
  };
-  # 对于NVIDIA显卡用户，硬件驱动配置通常是必须的
-  # hardware.nvidia.modesetting.enable = true;
-  # services.xserver.videoDrivers = [ "nvidia" ];
+
+# 对于NVIDIA显卡用户，硬件驱动配置通常是必须的
+# hardware.nvidia.modesetting.enable = true;
+# services.xserver.videoDrivers = [ "nvidia" ];
 #GPU Drivers
 
 #Others
  services.power-profiles-daemon.enable = true;
  #programs.obs-studio.package = true;
  #services.upower.enable = true;
+
 #Niri Config
  security.polkit.enable = true; # polkit
  services.gnome.gnome-keyring.enable = true; # secret service

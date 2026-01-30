@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, inputs, ... }: 
 {
   # 指定此配置用于哪个用户
   home.username = "Flandre";
@@ -8,7 +8,13 @@
     "Xcursor.size" = 24;
     #"Xft.dpi" = 172;
   };
-
+  imports = [
+    ./fish.nix
+    ./kitty.nix
+    ./cursors.nix
+    # 你可以继续导入更多模块
+    #./noctalia.nix
+  ];
   # 声明要管理的配置文件（启用后，Home Manager 会接管并生成它们）
   #programs.bash = {
   #  enable = true;

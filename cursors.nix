@@ -2,7 +2,6 @@
 
 {
   # 配置指针主题（解决XWayland黑指针问题）
-  home-manager.users.Flandre = { # 请将“你的用户名”替换为实际的用户名
     home.packages = with pkgs; [
     phinger-cursors
     rose-pine-cursor
@@ -15,8 +14,6 @@
       gtk.enable = true;
       x11.enable = true; # 对XWayland生效的关键
     };
-  };
-
   # 这里可以添加其他主题配置，例如：
   # - gtk.theme, iconTheme
   # - qt.style

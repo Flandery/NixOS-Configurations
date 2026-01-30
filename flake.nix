@@ -23,13 +23,9 @@
       system = "x86_64-linux"; # 或者 "aarch64-linux" 等
       specialArgs = { inherit inputs; };
       modules = [
+         ./configuration.nix
         # ... other modules
-        ./cursors.nix
-        ./noctalia.nix
-	      ./configuration.nix
         #./hardware-configuration.nix
-	      ./fish.nix
-	      ./kitty.nix
         #./starship.nix
 	# 将 home-manager 配置为 nixos 的一个 module
         # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署

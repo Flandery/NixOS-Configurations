@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
- home-manager.users.Flandre = {
   programs.kitty = {
     enable = true;
     
@@ -36,6 +35,5 @@
       # END_KITTY_THEME
       include ./themes/noctalia.conf
     '';
-  };
  };
 }
