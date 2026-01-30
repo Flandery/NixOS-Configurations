@@ -1,12 +1,16 @@
-# /FlanderyConfigurations/theme.nix
 { config, pkgs, ... }:
 
 {
   # 配置指针主题（解决XWayland黑指针问题）
-  home-manager.users.你的用户名 = { # 请将“你的用户名”替换为实际的用户名
+  home-manager.users.Flandre = { # 请将“你的用户名”替换为实际的用户名
+    home.packages = with pkgs; [
+    phinger-cursors
+    rose-pine-cursor
+    # 或其他主题，如 bibata-cursors
+    ];
     home.pointerCursor = {
-      name = "phinger-cursors-light";
-      package = pkgs.phinger-cursors;
+      name = "rose-pine-cursor";
+      package = pkgs.rose-pine-cursor;
       size = 24;
       gtk.enable = true;
       x11.enable = true; # 对XWayland生效的关键

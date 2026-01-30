@@ -24,7 +24,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         # ... other modules
-        #./cursors.nix
+        ./cursors.nix
         ./noctalia.nix
 	      ./configuration.nix
         #./hardware-configuration.nix
