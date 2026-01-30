@@ -3,6 +3,12 @@
   # 指定此配置用于哪个用户
   home.username = "Flandre";
   home.homeDirectory = "/home/Flandre";
+  # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
+  xresources.properties = {
+    "Xcursor.size" = 24;
+    #"Xft.dpi" = 172;
+  };
+
   # 声明要管理的配置文件（启用后，Home Manager 会接管并生成它们）
   #programs.bash = {
   #  enable = true;
