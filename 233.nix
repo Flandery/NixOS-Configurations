@@ -44,6 +44,11 @@
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     btrfs-progs
+    power-profiles-daemon
+    gnome-extension-manager
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.just-perfection
+    gnomeExtensions.arc-menu
     # ... maybe other stuff
   ];
 # services = {
@@ -102,13 +107,12 @@
  };
 
 #zram
- zramSwap.enable = true; # Creates a zram block device and uses it as a swap device
- boot.kernelParams = [
-    "zswap.enabled=1" # enables zswap
-    "zswap.compressor=lz4" # compression algorithm
-    "zswap.max_pool_percent=100" # maximum percentage of RAM that zswap is allowed to use
-    "zswap.shrinker_enabled=1" # whether to shrink the pool proactively on high memory pressure
- ];
+ zramSwap = {
+      enable = true;
+      memoryPercent = 100;
+      algorithm = "lz4";
+      priority = 10;
+ }; # Creates a zram block device and uses it as a swap device
 
 
 # 启用自动垃圾收集
@@ -210,7 +214,7 @@ nix.settings.auto-optimise-store = true;
 #Others
  services.power-profiles-daemon.enable = true;
  #programs.obs-studio.package = true;
- #services.upower.enable = true;
+ services.upower.enable = true;
 
 #Niri Config
  security.polkit.enable = true; # polkit
