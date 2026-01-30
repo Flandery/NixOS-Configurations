@@ -179,6 +179,7 @@ nix.settings.auto-optimise-store = true;
  supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
  };
 
+#环境变量
 # 可选：为 GTK/Qt 程序设置环境变量（启用Wayland前端后，部分变量可能被覆盖[citation:3]）
  environment.sessionVariables = {
    # 如果你只使用X11应用，可能需要保留这些[citation:3]
@@ -186,6 +187,12 @@ nix.settings.auto-optimise-store = true;
    # QT_IM_MODULE = "fcitx";
    XMODIFIERS = "@im=fcitx";
  };
+ environment.variables = {
+	EDITOR= "vim";
+	QT_QPA_PLATFORMTHEME = "gtk3";
+	QS_ICON_THEME = "Adwaita";
+ };
+
 
 # 对于NVIDIA显卡用户，硬件驱动配置通常是必须的
 # hardware.nvidia.modesetting.enable = true;
