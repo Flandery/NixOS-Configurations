@@ -44,7 +44,7 @@
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     btrfs-progs
-    power-profiles-daemon
+#    power-profiles-daemon
     gnome-extension-manager
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
