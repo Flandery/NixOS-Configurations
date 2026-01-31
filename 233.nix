@@ -211,9 +211,8 @@ nix.settings.auto-optimise-store = true;
 # services.xserver.videoDrivers = [ "nvidia" ];
 #GPU Drivers
 
-#Others
+#Power Settings
  services.power-profiles-daemon.enable = true;
- #programs.obs-studio.package = true;
  services.upower.enable = true;
 
 #Niri Config
@@ -241,6 +240,7 @@ nix.settings.auto-optimise-store = true;
 # Tip: For improved gaming performance, you can also enable GameMode:
 # programs.gamemode.enable = true;
  
+#Others
  programs.nix-ld.enable = true;
 
 }
