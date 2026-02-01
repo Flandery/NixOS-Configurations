@@ -11,7 +11,7 @@
   imports = [
     ./fish.nix
     ./kitty.nix
-    ./cursors.nix
+    #./cursors.nix
     ./niri.nix
     # 你可以继续导入更多模块
     #./noctalia.nix
