@@ -44,6 +44,8 @@
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     btrfs-progs
+    wechat
+    libreoffice
 #    power-profiles-daemon
     gnome-extension-manager
     gnomeExtensions.blur-my-shell
