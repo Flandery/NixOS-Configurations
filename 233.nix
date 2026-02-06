@@ -59,6 +59,15 @@
     gnomeExtensions.coverflow-alt-tab
     gnomeExtensions.desktop-icons-ng-ding
     gnomeExtensions.dash-to-panel
+    gnomeExtensions.background-logo
+    gnomeExtensions.logo-menu
+    gnomeExtensions.steal-my-focus-window
+    gnomeExtensions.fuzzy-application-search
+    gnomeExtensions.tiling-shell
+    gnomeExtensions.vitals
+    gnomeExtensions.desktop-cube
+    gnomeExtensions.rounded-window-corners-reborn
+    gnomeExtensions.app-icons-taskbar
     ghostty
     # ... maybe other stuff
   ];
