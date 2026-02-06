@@ -445,7 +445,7 @@ binds {
     Mod+E { spawn-sh "env GSK_RENDERER=gl GTK_IM_MODULE=fcitx nautilus"; }                     
     Mod+Alt+V {spawn "clipse-gui";}                                                            
     Mod+M { spawn "firefox"; }
-    Mod+D { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
+    Mod+D { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
