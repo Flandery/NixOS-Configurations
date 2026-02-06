@@ -13,6 +13,7 @@
     ./kitty.nix
     #./cursors.nix
     ./niri.nix
+    ./fastfetch.nix
     # 你可以继续导入更多模块
     #./noctalia.nix
   ];
