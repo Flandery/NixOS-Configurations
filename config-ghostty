@@ -14,3 +14,6 @@ window-padding-x=10
 window-padding-y=10
 
 window-save-state = always
+
+window-width = 144
+window-height = 44
