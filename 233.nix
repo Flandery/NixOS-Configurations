@@ -68,6 +68,7 @@
     gnomeExtensions.desktop-cube
     gnomeExtensions.rounded-window-corners-reborn
     gnomeExtensions.app-icons-taskbar
+    dconf-editor
     ghostty
     # ... maybe other stuff
   ];
@@ -248,6 +249,9 @@ nix.settings.auto-optimise-store = true;
   enable = true;
   enable32Bit = true;
  };
+
+#Waydroid
+ virtualisation.waydroid.enable = true;
 
 #Steam
  programs.steam = {
