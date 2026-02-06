@@ -70,6 +70,7 @@
     gnomeExtensions.app-icons-taskbar
     gnomeExtensions.tiling-assistant
     gnomeExtensions.highlight-focus
+    gnomeExtensions.burn-my-windows
     dconf-editor
     ghostty
     # ... maybe other stuff
