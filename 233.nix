@@ -49,6 +49,8 @@
     gnomeExtensions.blur-my-shell
     gnomeExtensions.just-perfection
     gnomeExtensions.arc-menu
+    gnomeExtensions.dash-to-dock
+    ghostty
     # ... maybe other stuff
   ];
 # services = {
