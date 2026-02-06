@@ -13,4 +13,4 @@ window-padding-x=10
 #设置上下边距
 window-padding-y=10
 
-window-save-state = true
+window-save-state = always
