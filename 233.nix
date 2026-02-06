@@ -69,6 +69,7 @@
     gnomeExtensions.rounded-window-corners-reborn
     gnomeExtensions.app-icons-taskbar
     gnomeExtensions.tiling-assistant
+    gnomeExtensions.highlight-focus
     dconf-editor
     ghostty
     # ... maybe other stuff
