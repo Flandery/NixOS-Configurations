@@ -71,6 +71,13 @@
     gnomeExtensions.tiling-assistant
     gnomeExtensions.highlight-focus
     gnomeExtensions.burn-my-windows
+    gnomeExtensions.forge
+    gnomeExtensions.app-menu-is-back
+    gnomeExtensions.quick-settings-tweaker
+    gnomeExtensions.compiz-windows-effect
+    gnomeExtensions.compiz-alike-magic-lamp-effect
+    gnomeExtensions.wallhub
+    #gnomeExtensions.custom-window-controls
     dconf-editor
     ghostty
     # ... maybe other stuff
