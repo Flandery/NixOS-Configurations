@@ -1,8 +1,5 @@
-#颜色配置文件路径要使用/开头的绝对路径
-theme = /home/shorin/.config/ghostty/catppuccin-frappe.conf
-
 #隐藏标题栏
-window-decoration = none
+#window-decoration = none
 
 #设置透明度
 background-opacity=0.6
