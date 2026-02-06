@@ -52,6 +52,13 @@
     gnomeExtensions.just-perfection
     gnomeExtensions.arc-menu
     gnomeExtensions.dash-to-dock
+    gnomeExtensions.clipboard-indicator
+    gnomeExtensions.appindicator
+    gnomeExtensions.caffeine
+    gnomeExtensions.gsconnect
+    gnomeExtensions.coverflow-alt-tab
+    gnomeExtensions.desktop-icons-ng-ding
+    gnomeExtensions.dash-to-panel
     ghostty
     # ... maybe other stuff
   ];
