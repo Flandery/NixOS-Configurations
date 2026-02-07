@@ -19,7 +19,7 @@
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.FlandreScarletNixOS = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.FlanderyNixOS = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # 或者 "aarch64-linux" 等
       specialArgs = { inherit inputs; };
       modules = [
