@@ -281,6 +281,7 @@ nix.settings.auto-optimise-store = true;
  virtualisation.waydroid.enable = true;
 
 #Steam
+ programs.gamescope.enable = true;
  programs.steam = {
   enable = true; # Master switch, already covered in installation
   remotePlay.openFirewall = true;  # For Steam Remote Play
