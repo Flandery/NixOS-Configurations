@@ -45,6 +45,7 @@
 #    xdg-desktop-portal-gnome
     btrfs-progs
     wechat
+    telegram-desktop
     libreoffice
 #    power-profiles-daemon
     gnome-extension-manager
