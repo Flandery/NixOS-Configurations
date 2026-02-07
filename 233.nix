@@ -80,6 +80,7 @@
     #gnomeExtensions.custom-window-controls
     dconf-editor
     ghostty
+    protonplus
     # ... maybe other stuff
   ];
 # services = {
