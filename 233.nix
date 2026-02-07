@@ -48,6 +48,7 @@
     wechat
     telegram-desktop
     libreoffice
+    wl-clipboard
 #    power-profiles-daemon
     gnome-extension-manager
     gnomeExtensions.blur-my-shell
