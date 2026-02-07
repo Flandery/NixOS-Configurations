@@ -141,7 +141,7 @@
  zramSwap = {
       enable = true;
       memoryPercent = 100;
-      algorithm = "lz4";
+      algorithm = "zstd";
       priority = 10;
  }; # Creates a zram block device and uses it as a swap device
 
