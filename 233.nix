@@ -296,5 +296,6 @@ nix.settings.auto-optimise-store = true;
  
 #Others
  programs.nix-ld.enable = true;
+ programs.java.enable = true;
 
 }
