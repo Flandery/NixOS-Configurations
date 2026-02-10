@@ -9,7 +9,7 @@
 
 cursor {
 //   //鼠标的光标主题
-    xcursor-theme "ArcStarry-cursors"
+    xcursor-theme "breeze-hacked-cursor-theme"
 //
 //    //大小
     xcursor-size 27

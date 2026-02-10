@@ -103,6 +103,8 @@
     umu-launcher
     termius
     breeze-hacked-cursor-theme
+    kdePackages.breeze-gtk
+    layan-cursors
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
