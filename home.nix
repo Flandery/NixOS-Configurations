@@ -8,6 +8,7 @@
     "Xcursor.size" = 24;
     #"Xft.dpi" = 172;
   };
+  services.polkit-gnome.enable = true; # polkit
   imports = [
     ./fish.nix
     ./kitty.nix
