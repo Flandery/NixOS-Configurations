@@ -106,6 +106,7 @@
     kdePackages.breeze-gtk
     layan-cursors
     kazumi
+    btrfs-assistant
 #    upscaler
   ];
 # services = {
