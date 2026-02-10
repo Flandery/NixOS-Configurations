@@ -9,7 +9,7 @@
 
 cursor {
 //   //鼠标的光标主题
-    xcursor-theme "breeze-hacked-cursor-theme"
+    xcursor-theme "Layan-cursors"
 //
 //    //大小
     xcursor-size 27
