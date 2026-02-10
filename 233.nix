@@ -1,6 +1,6 @@
 { config, lib, pkgs, inputs, ... }:
 {
- users.users.Flandre = {
+ users.users.Flandery = {
      isNormalUser = true;
      extraGroups = [ "wheel" "gamemode" "networkmanager" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [

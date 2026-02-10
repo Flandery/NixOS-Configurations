@@ -1,8 +1,8 @@
 { config, pkgs, inputs, ... }: 
 {
   # 指定此配置用于哪个用户
-  home.username = "Flandre";
-  home.homeDirectory = "/home/Flandre";
+  home.username = "Flandery";
+  home.homeDirectory = "/home/Flandery";
   # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
   xresources.properties = {
     "Xcursor.size" = 24;
