@@ -43,7 +43,7 @@
     obs-studio
 #    vimPlugins.lazy-nvim
 #    polkit_gnome
-    xdg-desktop-portal-gnome
+#    xdg-desktop-portal-gnome
     btrfs-progs
     wechat
     telegram-desktop
