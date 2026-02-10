@@ -101,6 +101,7 @@
     wineWowPackages.waylandFull
     # ... maybe other stuff
     umu-launcher
+    termius
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
