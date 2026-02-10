@@ -108,6 +108,7 @@
     kazumi
     btrfs-assistant
 #    upscaler
+    activate-linux
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
