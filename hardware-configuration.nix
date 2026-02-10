@@ -16,13 +16,13 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/02689b6e-3b03-40eb-be5f-236ef7b09b06";
       fsType = "btrfs";
-      options = [ "subvol=@FlandreScarletNixOS" "noatime" "discard=async" "compress=zstd" ];
+      options = [ "subvol=@FlanderyNixOS" "noatime" "discard=async" "compress=zstd" ];
     };
 
   fileSystems."/home" =
     { device = "/dev/disk/by-uuid/02689b6e-3b03-40eb-be5f-236ef7b09b06";
       fsType = "btrfs";
-      options = [ "subvol=@FlandreScarletNixOSHome" "noatime" "discard=async" "compress=zstd" ];
+      options = [ "subvol=@FlanderyNixOSHome" "noatime" "discard=async" "compress=zstd" ];
     };
 
   fileSystems."/boot" =
@@ -31,10 +31,10 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  fileSystems."/FlanderyConfigurations" =
+  fileSystems."/FlanderyNixOSConfig" =
     { device = "/dev/disk/by-uuid/02689b6e-3b03-40eb-be5f-236ef7b09b06";
       fsType = "btrfs";
-      options = [ "subvol=@FlandreScarletNixOSConfig" ];
+      options = [ "subvol=@FlanderyNixOSConfig" "noatime" "discard=async" "compress=zstd" ];
     };
 
   fileSystems."/home/Flandery/FlanderyGames" =                                                   
