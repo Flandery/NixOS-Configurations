@@ -106,7 +106,7 @@
     kdePackages.breeze-gtk
     layan-cursors
     kazumi
-    upscaler
+#    upscaler
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
