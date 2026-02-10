@@ -43,7 +43,7 @@
     obs-studio
 #    vimPlugins.lazy-nvim
 #    polkit_gnome
-#    xdg-desktop-portal-gnome
+    xdg-desktop-portal-gnome
     btrfs-progs
     wechat
     telegram-desktop
@@ -105,6 +105,8 @@
     breeze-hacked-cursor-theme
     kdePackages.breeze-gtk
     layan-cursors
+    kazumi
+    upscaler
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
@@ -302,5 +304,7 @@ nix.settings.auto-optimise-store = true;
 #Others
  programs.nix-ld.enable = true;
  programs.java.enable = true;
+ hardware.amdgpu.overdrive.enable = true;
+ services.lact.enable = true;
 
 }
