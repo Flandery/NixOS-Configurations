@@ -110,7 +110,8 @@
 #    upscaler
     activate-linux
     discord
-    iptables
+    #iptables
+    #iptables-legacy
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
