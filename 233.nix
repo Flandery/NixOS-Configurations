@@ -109,6 +109,7 @@
     btrfs-assistant
 #    upscaler
     activate-linux
+    discord
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
