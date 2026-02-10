@@ -102,6 +102,7 @@
     # ... maybe other stuff
     umu-launcher
     termius
+    breeze-hacked-cursor-theme
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
