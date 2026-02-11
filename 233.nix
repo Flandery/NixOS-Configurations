@@ -114,6 +114,8 @@
     #iptables-legacy
     networkmanagerapplet
     dnsmasq
+    gnomeExtensions.quick-settings-audio-panel
+    gnomeExtensions.search-light
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
