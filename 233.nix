@@ -112,6 +112,8 @@
     discord
     #iptables
     #iptables-legacy
+    networkmanagerapplet
+    dnsmasq
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
