@@ -117,6 +117,7 @@
     gnomeExtensions.quick-settings-audio-panel
     gnomeExtensions.search-light
     gnomeExtensions.open-bar
+    flclash
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
