@@ -16,6 +16,7 @@
     ./niri.nix
     ./fastfetch.nix
     ./ghostty.nix
+    ./avatar.nix
     # 你可以继续导入更多模块
     #./noctalia.nix
   ];
