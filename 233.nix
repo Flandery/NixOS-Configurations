@@ -119,6 +119,7 @@
     gnomeExtensions.open-bar
     flclash
     sbctl
+    python3
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
