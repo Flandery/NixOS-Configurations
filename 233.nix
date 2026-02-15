@@ -331,4 +331,14 @@ nix.settings.auto-optimise-store = true;
 #Secure Boot
  boot.loader.limine.secureBoot.enable = true;
 
+#iptables
+  networking.nftables.enable = true;
+  #boot.kernelModules = [
+  #  "ip_tables"
+  #  "iptable_nat"
+  #  "iptable_filter"
+  #  "nf_nat"
+  #  "nf_conntrack"
+  #];
+
 }
