@@ -110,7 +110,7 @@
 #    upscaler
     activate-linux
     discord
-    #iptables
+    iptables
     #iptables-legacy
     networkmanagerapplet
     dnsmasq
@@ -326,5 +326,8 @@ nix.settings.auto-optimise-store = true;
       flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     '';
   };
+
+#Secure Boot
+ boot.loader.limine.secureBoot.enable = true;
 
 }
