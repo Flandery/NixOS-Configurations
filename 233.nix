@@ -118,6 +118,7 @@
     gnomeExtensions.search-light
     gnomeExtensions.open-bar
     flclash
+    sbctl
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
