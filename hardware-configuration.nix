@@ -41,8 +41,18 @@
     { device = "/dev/disk/by-uuid/02689b6e-3b03-40eb-be5f-236ef7b09b06";                       
       fsType = "btrfs";                                                                        
       options = [ "subvol=@ReimuGames" "noatime" "discard=async" "compress=zstd" ];                                                                                              
-    };   
-  swapDevices = [ ];
+    };
+
+  fileSystems."/swap" =                                                   
+    { device = "/dev/disk/by-uuid/02689b6e-3b03-40eb-be5f-236ef7b09b06";                       
+      fsType = "btrfs";                                                                        
+      options = [ "subvol=@FlanderySwap" "noatime" "discard=async" ];                                                                                              
+    };
+  swapDevices = [
+  {
+  device = "/swap/swapfile";
+  }
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
