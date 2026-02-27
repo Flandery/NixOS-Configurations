@@ -31,13 +31,29 @@
       options = [ "subvol=@FlanderyNixOSConfig" "noatime" "compress=zstd" ];
     };
 
+  fileSystems."/home/Flandery/FlanderyGames" =
+    { device = "/dev/disk/by-uuid/2b4fac7f-7627-4a9f-97ff-a4f890eb7393";                                                                                                                         
+      fsType = "btrfs";                                                                                                                                                                          
+      options = [ "subvol=@FlanderyGames" "noatime" "compress=zstd" ];                                                                                                                     
+    };
+  
+  fileSystems."/swap" =                                                                                                                                                           
+    { device = "/dev/disk/by-uuid/2b4fac7f-7627-4a9f-97ff-a4f890eb7393";                                                                                                                         
+      fsType = "btrfs";                                                                                                                                                                          
+      options = [ "subvol=@FlanderySwap" ];                                                                                                                     
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/5F92-7B22";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [                                                                              
+  {                                                                                            
+  device = "/swap/swapfile";                                                                   
+  }                                                                                            
+  ]; 
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
