@@ -175,6 +175,7 @@
     renice = 10;
   };
  };
+ programs.thunar.enable = true;
 
 #zram
  zramSwap = {
