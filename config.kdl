@@ -442,7 +442,8 @@ binds {
     Mod+WheelScrollDown { focus-column-right; }                                                
     Mod+Up { focus-workspace-up; }                                                             
     Mod+Down { focus-workspace-down; }                                                         
-    Mod+E { spawn-sh "env GSK_RENDERER=gl GTK_IM_MODULE=fcitx nautilus"; }                     
+    //Mod+E { spawn-sh "env GSK_RENDERER=gl GTK_IM_MODULE=fcitx nautilus"; }                     
+    Mod+E { spawn "thunar"; }
     Mod+Alt+V {spawn "clipse-gui";}                                                            
     Mod+M { spawn "firefox"; }
     Mod+D { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
