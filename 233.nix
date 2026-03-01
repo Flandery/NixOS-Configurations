@@ -120,6 +120,7 @@
     flclash
     sbctl
     python3
+    peazip
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
