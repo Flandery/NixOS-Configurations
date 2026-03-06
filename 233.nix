@@ -133,6 +133,12 @@
  services.desktopManager.gnome.enable = true;
  programs.niri.enable = true;  # 启用Niri Wayland合成器（作为GNOME的替代或补充）
  services.xserver.enable = true;
+ #services.desktopManager.plasma6.enable = true;
+ #services.displayManager.sddm = {
+ # enable = true;
+ # wayland.enable = true;
+ #};
+
 
 # Enable sound with pipewire.
  services.pulseaudio.enable = false;
@@ -176,6 +182,7 @@
   };
  };
  programs.thunar.enable = true;
+ #programs.ssh.askPassword = lib.mkForce "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
 
 #zram
  zramSwap = {
