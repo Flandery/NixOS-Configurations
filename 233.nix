@@ -19,7 +19,7 @@
     mission-center
     qq
     git
-    neofetch
+    #neofetch
     fastfetch
     starship
     yazi
