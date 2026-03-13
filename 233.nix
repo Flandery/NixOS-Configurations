@@ -121,6 +121,7 @@
     sbctl
     python3
     peazip
+    kdePackages.qttools
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
