@@ -184,6 +184,7 @@
  };
  programs.thunar.enable = true;
  #programs.ssh.askPassword = lib.mkForce "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
+ programs.kdeconnect.enable = true;
 
 #zram
  zramSwap = {
