@@ -141,7 +141,7 @@ output "DP-2"{
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 26
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -697,7 +697,8 @@ layer-rule {
 
 window-rule {
     match app-id="kitty"
-    open-floating true
-    default-column-width { proportion 0.8; }
-    default-window-height { proportion 0.8; }
+    open-maximized true
+//    open-floating true
+//    default-column-width { proportion 0.8; }
+//    default-window-height { proportion 0.8; }
 }
