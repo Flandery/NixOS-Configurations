@@ -143,7 +143,7 @@
  # enable = true;
  # wayland.enable = true;
  #};
-
+ programs.hyprland.enable = true;
 
 # Enable sound with pipewire.
  services.pulseaudio.enable = false;
