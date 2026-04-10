@@ -125,6 +125,7 @@
     arch-install-scripts
     piliplus
     wofi
+    rofi
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
