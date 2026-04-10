@@ -123,6 +123,8 @@
     peazip
     kdePackages.qttools
     arch-install-scripts
+    piliplus
+    wofi
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
