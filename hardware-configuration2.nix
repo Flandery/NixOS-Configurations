@@ -43,6 +43,12 @@
       options = [ "subvol=@FlanderySwap" ];                                                                                                                     
     };
 
+  fileSystems."/FlanderysConfigurations" =                                                                                                                                                           
+    { device = "/dev/disk/by-uuid/2b4fac7f-7627-4a9f-97ff-a4f890eb7393";                                                                                                                         
+      fsType = "btrfs";                                                                                                                                                                          
+      options = [ "subvol=@FlanderysConfigurations" "noatime" "compress=zstd" ]; 
+    };
+
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/5F92-7B22";
       fsType = "vfat";
