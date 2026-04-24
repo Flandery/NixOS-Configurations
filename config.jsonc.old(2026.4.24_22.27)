@@ -43,12 +43,7 @@
     },
     {
       "type": "title",
-      "key": " ├   USR ",
-      "keyColor": "#dcc66e",
-    },
-    {
-      "type": "locale",
-      "key": " └   LOC ",
+      "key": " └   USR ",
       "keyColor": "#dcc66e",
     },
     "break",
@@ -91,12 +86,6 @@
       //"outputColor": "#d1c6a1"
     },
     {
-        "type": "custom",
-        "condition": { "succeeded": false }, // 仅当上一个模块（即host模块）失败时才运行
-        "key": "PC",
-        "format": "Flandery's ArchLinux"      // 这里改成你想要显示的备用文本
-    },
-    {
       "type": "cpu",
       "key": " ├   CPU ",
       "keyColor": "#eee2bc",
@@ -127,12 +116,6 @@
       "key": " └ 󰋊  DIS ",
       "keyColor": "#eee2bc",
       //"outputColor": "#d1c6a1"
-    },
-    "break",
-    "break",
-    { "type": "custom",
-      "key": " 哔哩哔哩 (゜-゜)つロ 干杯~",
-      "keyColor": "#B0C4DE",
     },
     "break",
     "break",
