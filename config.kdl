@@ -299,8 +299,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-//spawn-at-startup "noctalia-shell"
-spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "noctalia-shell"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -436,7 +435,7 @@ binds {
     Mod+E { spawn "thunar"; }
     Mod+Alt+V {spawn "clipse-gui";}                                                            
     Mod+M { spawn "firefox"; }
-    Mod+D { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+D { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
