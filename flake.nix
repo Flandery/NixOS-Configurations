@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    niri.url = "github:sodiboo/niri-flake";
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -23,6 +23,7 @@
       system = "x86_64-linux"; # 或者 "aarch64-linux" 等
       specialArgs = { inherit inputs; };
       modules = [
+        inputs.niri.nixosModules.niri
          ./configuration.nix
         # ... other modules
         #./hardware-configuration.nix

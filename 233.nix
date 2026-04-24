@@ -136,6 +136,8 @@
 #图形界面
  services.displayManager.gdm.enable = true;
  services.desktopManager.gnome.enable = true;
+ nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+ programs.niri.package = pkgs.niri-unstable;
  programs.niri.enable = true;  # 启用Niri Wayland合成器（作为GNOME的替代或补充）
  services.xserver.enable = true;
  #services.desktopManager.plasma6.enable = true;
