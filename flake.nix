@@ -25,6 +25,7 @@
       modules = [
         inputs.niri.nixosModules.niri
          ./configuration.nix
+         ./openldap.nix
         # ... other modules
         #./hardware-configuration.nix
         #./starship.nix
