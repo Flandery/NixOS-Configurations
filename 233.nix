@@ -126,6 +126,7 @@
     piliplus
     wofi
     rofi
+    eza
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
