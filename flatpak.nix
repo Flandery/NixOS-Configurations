@@ -4,8 +4,9 @@
   inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];
   services.flatpak = {
+    update.onActivation = true;
     packages = [
-    "com.spotify.Client"
+    "com.tencent.WeChat"
     ];
   };
 }
