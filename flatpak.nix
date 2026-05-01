@@ -13,6 +13,7 @@
     };
     packages = [
     "com.tencent.WeChat"
+    "io.gitlab.theevilskeleton.Upscaler"
     ];
   };
 }
