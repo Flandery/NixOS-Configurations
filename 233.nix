@@ -340,13 +340,16 @@ nix.settings.auto-optimise-store = true;
 
 #flatpak
  services.flatpak.enable = true;
- systemd.services.flatpak-repo = {
-    wantedBy = [ "multi-user.target" ];
-    path = [ pkgs.flatpak ];
-    script = ''
-      flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-    '';
-  };
+ services.flatpak.remotes = {
+    flathub = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+};
+ #systemd.services.flatpak-repo = {
+ #   wantedBy = [ "multi-user.target" ];
+ #   path = [ pkgs.flatpak ];
+ #   script = ''
+ #     flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+ #   '';
+ # };
 
 #Secure Boot
  boot.loader.limine.secureBoot.enable = true;
