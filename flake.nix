@@ -16,6 +16,10 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
@@ -24,6 +28,8 @@
       specialArgs = { inherit inputs; };
       modules = [
         inputs.niri.nixosModules.niri
+        inputs.nur.modules.nixos.default
+        inputs.nur.repos.iopq.modules.nixos.xraya
          ./configuration.nix
          ./openldap.nix
         # ... other modules

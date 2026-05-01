@@ -127,6 +127,7 @@
     wofi
     rofi
     eza
+    nur.repos.mic92.hello-nur
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
