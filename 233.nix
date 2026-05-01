@@ -340,9 +340,13 @@ nix.settings.auto-optimise-store = true;
 
 #flatpak
  services.flatpak.enable = true;
- services.flatpak.remotes = {
-    flathub = "https://dl.flathub.org/repo/flathub.flatpakrepo";
-};
+ services.flatpak.remotes = lib.mkOptionDefault [
+    {
+      name = "flathub";
+      location = "https://mirrors.ustc.edu.cn/flathub";
+    }
+    # 如果有其他源，也可以在这里添加
+  ];
  #systemd.services.flatpak-repo = {
  #   wantedBy = [ "multi-user.target" ];
  #   path = [ pkgs.flatpak ];
