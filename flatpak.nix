@@ -4,7 +4,13 @@
   inputs.nix-flatpak.homeManagerModules.nix-flatpak
   ];
   services.flatpak = {
-    update.onActivation = true;
+    update = {
+      auto = {
+        enable = true;
+        onCalendar = "weekly";
+      };
+      onActivation = true;
+    };
     packages = [
     "com.tencent.WeChat"
     ];
