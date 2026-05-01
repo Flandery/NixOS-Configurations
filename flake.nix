@@ -20,6 +20,7 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
@@ -30,6 +31,7 @@
         inputs.niri.nixosModules.niri
         inputs.nur.modules.nixos.default
         inputs.nur.repos.iopq.modules.nixos.xraya
+        inputs.nix-flatpak.nixosModules.nix-flatpak
          ./configuration.nix
          ./openldap.nix
         # ... other modules
