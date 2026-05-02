@@ -128,6 +128,7 @@
     rofi
     eza
     nur.repos.mic92.hello-nur
+    cliphist
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
