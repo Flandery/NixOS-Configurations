@@ -47,7 +47,8 @@
     btrfs-progs
     wechat
     telegram-desktop
-    libreoffice
+#    libreoffice
+    (import inputs.nixpkgsStable { inherit system; }).libreoffice
     wl-clipboard
 #    power-profiles-daemon
     gnome-extension-manager
