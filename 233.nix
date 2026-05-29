@@ -45,7 +45,7 @@
 #    polkit_gnome
 #    xdg-desktop-portal-gnome
     btrfs-progs
-    wechat
+    #wechat
     telegram-desktop
 #    libreoffice
     (import inputs.nixpkgsStable { inherit system; }).libreoffice
