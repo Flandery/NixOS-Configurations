@@ -80,7 +80,7 @@
     gnomeExtensions.quick-settings-tweaker
     gnomeExtensions.compiz-windows-effect
     gnomeExtensions.compiz-alike-magic-lamp-effect
-    gnomeExtensions.wallhub
+    #gnomeExtensions.wallhub
     #gnomeExtensions.custom-window-controls
     dconf-editor
     ghostty
