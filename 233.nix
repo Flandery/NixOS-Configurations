@@ -27,7 +27,7 @@
     fuzzel
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     xwayland-satellite
-    gnome-tweaks
+    #gnome-tweaks
     refine
     mangohud
     mangojuice
@@ -51,38 +51,38 @@
     (import inputs.nixpkgsStable { inherit system; }).libreoffice
     wl-clipboard
 #    power-profiles-daemon
-    gnome-extension-manager
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.just-perfection
-    gnomeExtensions.arc-menu
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.clipboard-indicator
-    gnomeExtensions.appindicator
-    gnomeExtensions.caffeine
-    gnomeExtensions.gsconnect
-    gnomeExtensions.coverflow-alt-tab
-    gnomeExtensions.desktop-icons-ng-ding
-    gnomeExtensions.dash-to-panel
-    gnomeExtensions.background-logo
-    gnomeExtensions.logo-menu
-    gnomeExtensions.steal-my-focus-window
-    gnomeExtensions.fuzzy-application-search
-    gnomeExtensions.tiling-shell
-    gnomeExtensions.vitals
-    gnomeExtensions.desktop-cube
-    gnomeExtensions.rounded-window-corners-reborn
-    gnomeExtensions.app-icons-taskbar
-    gnomeExtensions.tiling-assistant
-    gnomeExtensions.highlight-focus
-    gnomeExtensions.burn-my-windows
-    gnomeExtensions.forge
-    gnomeExtensions.app-menu-is-back
-    gnomeExtensions.quick-settings-tweaker
-    gnomeExtensions.compiz-windows-effect
-    gnomeExtensions.compiz-alike-magic-lamp-effect
+    #gnome-extension-manager
+    #gnomeExtensions.blur-my-shell
+    #gnomeExtensions.just-perfection
+    #gnomeExtensions.arc-menu
+    #gnomeExtensions.dash-to-dock
+    #gnomeExtensions.clipboard-indicator
+    #gnomeExtensions.appindicator
+    #gnomeExtensions.caffeine
+    #gnomeExtensions.gsconnect
+    #gnomeExtensions.coverflow-alt-tab
+    #gnomeExtensions.desktop-icons-ng-ding
+    #gnomeExtensions.dash-to-panel
+    #gnomeExtensions.background-logo
+    #gnomeExtensions.logo-menu
+    #gnomeExtensions.steal-my-focus-window
+    #gnomeExtensions.fuzzy-application-search
+    #gnomeExtensions.tiling-shell
+    #gnomeExtensions.vitals
+    #gnomeExtensions.desktop-cube
+    #gnomeExtensions.rounded-window-corners-reborn
+    #gnomeExtensions.app-icons-taskbar
+    #gnomeExtensions.tiling-assistant
+    #gnomeExtensions.highlight-focus
+    #gnomeExtensions.burn-my-windows
+    #gnomeExtensions.forge
+    #gnomeExtensions.app-menu-is-back
+    #gnomeExtensions.quick-settings-tweaker
+    #gnomeExtensions.compiz-windows-effect
+    #gnomeExtensions.compiz-alike-magic-lamp-effect
     #gnomeExtensions.wallhub
     #gnomeExtensions.custom-window-controls
-    dconf-editor
+    #dconf-editor
     ghostty
     protonplus
     # ...
@@ -115,9 +115,9 @@
     #iptables-legacy
     networkmanagerapplet
     dnsmasq
-    gnomeExtensions.quick-settings-audio-panel
-    gnomeExtensions.search-light
-    gnomeExtensions.open-bar
+    #gnomeExtensions.quick-settings-audio-panel
+    #gnomeExtensions.search-light
+    #gnomeExtensions.open-bar
     flclash
     sbctl
     python3
@@ -138,18 +138,18 @@
 # };
 
 #图形界面
- services.displayManager.gdm.enable = true;
- services.desktopManager.gnome.enable = true;
- nixpkgs.overlays = [ inputs.niri.overlays.niri ];
- programs.niri.package = pkgs.niri-unstable;
- programs.niri.enable = true;  # 启用Niri Wayland合成器（作为GNOME的替代或补充）
- services.xserver.enable = true;
+ #services.displayManager.gdm.enable = true;
+ #services.desktopManager.gnome.enable = true;
+ #nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+ #programs.niri.package = pkgs.niri-unstable;
+ #programs.niri.enable = true;  # 启用Niri Wayland合成器（作为GNOME的替代或补充）
+ #services.xserver.enable = true;
  #services.desktopManager.plasma6.enable = true;
  #services.displayManager.sddm = {
  # enable = true;
  # wayland.enable = true;
  #};
- programs.hyprland.enable = true;
+ #programs.hyprland.enable = true;
 
 # Enable sound with pipewire.
  services.pulseaudio.enable = false;
@@ -283,17 +283,17 @@ nix.settings.auto-optimise-store = true;
 
 #环境变量
 # 可选：为 GTK/Qt 程序设置环境变量（启用Wayland前端后，部分变量可能被覆盖[citation:3]）
- environment.sessionVariables = {
+ #environment.sessionVariables = {
    # 如果你只使用X11应用，可能需要保留这些[citation:3]
    # GTK_IM_MODULE = "fcitx";
    # QT_IM_MODULE = "fcitx";
-   XMODIFIERS = "@im=fcitx";
- };
- environment.variables = {
-	EDITOR= "vim";
-	QT_QPA_PLATFORMTHEME = "gtk3";
-	QS_ICON_THEME = "Adwaita";
- };
+   #XMODIFIERS = "@im=fcitx";
+ #};
+ #environment.variables = {
+#	EDITOR= "vim";
+#	QT_QPA_PLATFORMTHEME = "gtk3";
+#	QS_ICON_THEME = "Adwaita";
+# };
 
 
 # 对于NVIDIA显卡用户，硬件驱动配置通常是必须的
@@ -306,12 +306,12 @@ nix.settings.auto-optimise-store = true;
  services.upower.enable = true;
 
 #Niri Config
- security.polkit.enable = true; # polkit
- services.gnome.gnome-keyring.enable = true; # secret service
- security.pam.services.swaylock = {};
- xdg.portal.config.niri = {
-  "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
- };
+ #security.polkit.enable = true; # polkit
+ #services.gnome.gnome-keyring.enable = true; # secret service
+ #security.pam.services.swaylock = {};
+ #xdg.portal.config.niri = {
+ # "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ]; # or "kde"
+ #};
 
 #GPU Settings
  hardware.graphics = {
@@ -371,20 +371,25 @@ nix.settings.auto-optimise-store = true;
   #];
 
 #DMS-SHELL
- programs.dms-shell = {
-  enable = true;
+ #programs.dms-shell = {
+ # enable = true;
+#
+#  systemd = {
+#    enable = false;             # Systemd service for auto-start
+#    restartIfChanged = true;   # Auto-restart dms.service when dms-shell changes
+#  };
+#  
+#  Core features
+#  enableSystemMonitoring = true;     # System monitoring widgets (dgop)
+#  enableVPN = true;                  # VPN management widget
+#  enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
+#  enableAudioWavelength = true;      # Audio visualizer (cava)
+#  enableCalendarEvents = true;       # Calendar integration (khal)
+#  enableClipboardPaste = true;       # Pasting from the clipboard history (wtype)
+# };
 
-  systemd = {
-    enable = false;             # Systemd service for auto-start
-    restartIfChanged = true;   # Auto-restart dms.service when dms-shell changes
-  };
-  
-  # Core features
-  enableSystemMonitoring = true;     # System monitoring widgets (dgop)
-  enableVPN = true;                  # VPN management widget
-  enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
-  enableAudioWavelength = true;      # Audio visualizer (cava)
-  enableCalendarEvents = true;       # Calendar integration (khal)
-  enableClipboardPaste = true;       # Pasting from the clipboard history (wtype)
- };
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-39.8.10"
+  ];
+
 }
