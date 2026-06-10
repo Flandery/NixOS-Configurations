@@ -171,6 +171,7 @@
  nix.settings = {
     substituters = [
       "https://mirrors.ustc.edu.cn/nix-channels/store"  # 添加中科大镜像源
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://cache.nixos.org/"  # 默认官方缓存
     ];
     experimental-features = [ "nix-command" "flakes" ];  # 启用实验性功能：nix命令增强和flakes支持
@@ -391,5 +392,10 @@ nix.settings.auto-optimise-store = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-39.8.10"
   ];
+
+nix.settings = {
+    max-jobs = 1;
+    cores = 4;
+};
 
 }
