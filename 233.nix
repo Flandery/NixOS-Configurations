@@ -118,7 +118,7 @@
     #gnomeExtensions.quick-settings-audio-panel
     #gnomeExtensions.search-light
     #gnomeExtensions.open-bar
-    flclash
+#    flclash
     sbctl
     python3
     peazip
@@ -130,6 +130,7 @@
     eza
     nur.repos.mic92.hello-nur
     cliphist
+    opencode-desktop
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
@@ -254,6 +255,7 @@ nix.settings.auto-optimise-store = true;
       (fcitx5-rime.override {
         rimeDataPkgs = [
           pkgs.rime-ice
+	  pkgs.rime-data
 	  ];
 	 })
      #fcitx5-rime            # Rime 输入法（可选）
@@ -339,7 +341,7 @@ nix.settings.auto-optimise-store = true;
  programs.nix-ld.enable = true;
  programs.java.enable = true;
  hardware.amdgpu.overdrive.enable = true;
- services.lact.enable = true;
+# services.lact.enable = true;
 
 #flatpak
  services.flatpak.enable = true;

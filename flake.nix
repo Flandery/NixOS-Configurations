@@ -3,10 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgsStable.url = "github:nixos/nixpkgs/nixos-25.11";
-    niri.url = "github:sodiboo/niri-flake";
+    nixpkgsStable.url = "github:nixos/nixpkgs/nixos-26.05";
+    #niri.url = "github:sodiboo/niri-flake";
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -30,12 +30,12 @@
       system = "x86_64-linux"; # 或者 "aarch64-linux" 等
       specialArgs = { inherit inputs; };
       modules = [
-        inputs.niri.nixosModules.niri
+        #inputs.niri.nixosModules.niri
         inputs.nur.modules.nixos.default
         inputs.nur.repos.iopq.modules.nixos.xraya
         inputs.nix-flatpak.nixosModules.nix-flatpak
          ./configuration.nix
-         ./openldap.nix
+#         ./openldap.nix
          ./DesktopEnvironmentGNOME.nix
         # ... other modules
         #./hardware-configuration.nix
@@ -61,7 +61,7 @@
       system = "x86_64-linux"; # 或者 "aarch64-linux" 等
       specialArgs = { inherit inputs; };
       modules = [
-        inputs.niri.nixosModules.niri
+        #inputs.niri.nixosModules.niri
         inputs.nur.modules.nixos.default
         inputs.nur.repos.iopq.modules.nixos.xraya
         inputs.nix-flatpak.nixosModules.nix-flatpak

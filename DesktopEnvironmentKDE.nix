@@ -11,11 +11,11 @@
   # Optionally enable xserver
   # xserver.enable = true;
   };
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-  programs.niri.package = pkgs.niri-unstable;
+  #nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  #programs.niri.package = pkgs.niri-unstable;
   programs.niri.enable = true;  # 启用Niri Wayland合成器（作为GNOME的替代或补充）
   programs.hyprland.enable = true;
-
+  services.displayManager.defaultSession = lib.mkForce "plasma";
   #Niri Config
  security.polkit.enable = true; # polkit
  services.gnome.gnome-keyring.enable = true; # secret service
