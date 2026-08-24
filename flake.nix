@@ -5,6 +5,10 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgsStable.url = "github:nixos/nixpkgs/nixos-26.05";
     #niri.url = "github:sodiboo/niri-flake";
+    niri = {
+         url = "github:niri-wm/niri";
+         inputs.nixpkgs.follows = "nixpkgs";  # 与你的 nixos-unstable 保持一致
+    };
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
