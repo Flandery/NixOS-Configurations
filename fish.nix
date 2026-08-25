@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {                                                                                                                                          
      programs.fish = {
-      enable = true;
+     # enable = true;
      # 禁用 Fish 的欢迎信息
       shellInit = ''
         set -U fish_greeting ""

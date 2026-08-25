@@ -48,7 +48,7 @@
     #wechat
     telegram-desktop
 #    libreoffice
-    (import inputs.nixpkgsStable { inherit system; }).libreoffice
+    (import inputs.nixpkgsStable { system = pkgs.stdenv.hostPlatform.system; }).libreoffice
     wl-clipboard
 #    power-profiles-daemon
     #gnome-extension-manager
@@ -131,6 +131,7 @@
     nur.repos.mic92.hello-nur
     cliphist
     opencode-desktop
+    opencode
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
