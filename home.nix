@@ -13,7 +13,7 @@
     ./fish.nix
     ./kitty.nix
     #./cursors.nix
-    ./niri.nix
+    ./niri/niri.nix
     ./fastfetch.nix
     ./ghostty.nix
     ./nvim.nix
