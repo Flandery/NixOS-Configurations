@@ -16,6 +16,7 @@
     ./niri.nix
     ./fastfetch.nix
     ./ghostty.nix
+    ./nvim.nix
     ./avatar.nix
     ./flatpak.nix
     # 你可以继续导入更多模块

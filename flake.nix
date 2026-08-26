@@ -26,6 +26,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+    ai-usagebar.url = "github:akitaonrails/ai-usagebar";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {

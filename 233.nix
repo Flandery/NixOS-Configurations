@@ -132,6 +132,8 @@
     cliphist
     opencode-desktop
     opencode
+    mpvpaper
+    inputs.ai-usagebar.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;

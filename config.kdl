@@ -141,7 +141,7 @@ output "DP-2"{
 // https://yalter.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 26
+    gaps 20
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -298,7 +298,6 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
 spawn-at-startup "noctalia"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
@@ -662,13 +661,10 @@ binds {
 }
 
 include "./noctalia.kdl"
-// Set the overview wallpaper on the backdrop.
-layer-rule {
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
-}
+include "./niri_effects.kdl"
+include "./niri_rules.kdl"
 
-window-rule {
+/-window-rule {
     match app-id="kitty"
     open-maximized true
 //    open-floating false
@@ -676,41 +672,11 @@ window-rule {
 //    default-window-height { proportion 0.8; }
 }
 
-blur {
-  passes 2
-  offset 2
-  noise 0.02
-  saturation 1.2
-}
-
-window-rule {
-  background-effect {
-    xray false
-    blur true
-  }
-  //圆角                                                                                     
-  geometry-corner-radius 16                                                                  
-  //剪掉圆角外的窗口内容                                                                     
-  clip-to-geometry true                                                                      
-  //透明度                                                                                   
-  opacity 0.9                                                                              
-  //禁止边框画到窗口后面                                                                     
-  draw-border-with-background false  
-}
-
-/-layer-rule {
-  match namespace="noctalia-bar-content-*"
-  background-effect {
-    xray false
-    blur true
-  }
-}
-
 environment{
    QS_ICON_THEME "Adwaita"
 }
 
-window-rule {
+/-window-rule {
     match title="Friends List"
 //    open-maximized false
     open-floating true
@@ -718,7 +684,7 @@ window-rule {
     default-window-height { proportion 0.8; }
 }
 
-window-rule {
+/-window-rule {
     match title="图片查看器"
 //    open-maximized false
     open-floating true
