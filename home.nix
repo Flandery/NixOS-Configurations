@@ -10,14 +10,14 @@
   };
   services.polkit-gnome.enable = true; # polkit
   imports = [
-    ./fish.nix
-    ./kitty.nix
-    #./cursors.nix
-    ./niri/niri.nix
-    ./fastfetch.nix
-    ./ghostty.nix
-    ./nvim.nix
-    ./avatar.nix
+    ./terminal/fish.nix
+    ./terminal/kitty.nix
+    #./desktop/cursors.nix
+    ./desktop/niri.nix
+    ./terminal/fastfetch.nix
+    ./terminal/ghostty.nix
+    ./terminal/nvim.nix
+    ./desktop/avatar.nix
     ./flatpak.nix
     # 你可以继续导入更多模块
     #./noctalia.nix

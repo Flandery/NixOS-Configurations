@@ -40,11 +40,11 @@
         inputs.nur.repos.iopq.modules.nixos.xraya
         inputs.nix-flatpak.nixosModules.nix-flatpak
          ./configuration.nix
-#         ./openldap.nix
-         ./DesktopEnvironmentGNOME.nix
+#         ./others/openldap.nix
+         ./desktop/DesktopEnvironmentGNOME.nix
         # ... other modules
         #./hardware-configuration.nix
-        #./starship.nix
+        #./others/starship.nix
 	      # 将 home-manager 配置为 nixos 的一个 module
         # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
         home-manager.nixosModules.home-manager
@@ -71,11 +71,11 @@
         inputs.nur.repos.iopq.modules.nixos.xraya
         inputs.nix-flatpak.nixosModules.nix-flatpak
          ./configuration.nix
-         ./openldap.nix
-         ./DesktopEnvironmentKDE.nix
+         ./others/openldap.nix
+         ./desktop/DesktopEnvironmentKDE.nix
         # ... other modules
         #./hardware-configuration.nix
-        #./starship.nix
+        #./others/starship.nix
 	      # 将 home-manager 配置为 nixos 的一个 module
         # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
         home-manager.nixosModules.home-manager
