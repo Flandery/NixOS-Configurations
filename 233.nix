@@ -134,7 +134,6 @@
     opencode
     mpvpaper
     inputs.ai-usagebar.packages.${pkgs.stdenv.hostPlatform.system}.default
-    gimp
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;

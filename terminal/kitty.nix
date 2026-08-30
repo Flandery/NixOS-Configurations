@@ -15,7 +15,7 @@
       remember_window_size = "no";
       
       # 透明度
-      background_opacity = "0.9";
+      #background_opacity = "0.6";
       
       # 窗口关闭确认
       confirm_os_window_close = 0;

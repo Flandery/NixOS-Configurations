@@ -16,7 +16,6 @@
   programs.niri.enable = true;  # 启用Niri Wayland合成器（作为GNOME的替代或补充）
   programs.hyprland.enable = true;
   services.displayManager.defaultSession = lib.mkForce null;
-  services.displayManager.plasma-login-manager.settings.Greeter.PreselectedSession = "";
   #Niri Config
  security.polkit.enable = true; # polkit
  services.gnome.gnome-keyring.enable = true; # secret service
