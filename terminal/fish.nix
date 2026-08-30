@@ -9,14 +9,14 @@
      # 仅当处于交互式会话时执行
       interactiveShellInit = ''
         # 运行 fastfetch
-        fastfetch
+        clear; fastfetch
       '';
       shellAliases = {
     # nvim 相关
       nv = "nvim";
       vim = "nvim";  # 将 vim 也指向 nvim
       vi = "nvim";   # 将 vi 也指向 nvim
-      f = "fastfetch";
+      f = "clear; fastfetch";
       m = "musicfox";
       ls = "eza --icons";
       lt = "eza --icons -T -L 2";

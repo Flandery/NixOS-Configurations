@@ -2,137 +2,152 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
   "logo": {
     "type": "kitty",
-    "source": "~/.config/fastfetch/Reimu.png",
+    "source": "~/.config/fastfetch/Momoko.png",
     "width": 30,
-    "height":30,
     "padding": {
-      "top": 1, // Top padding
-      "left": 2, // Left padding
-      "right": 2 // Right padding
-    },
+      "top": 2,
+      "left": 1,
+      "right": 1
+    }
   },
   "display": {
-    "separator": " ", // Separator between keys and values
+    "separator": " ",
     "color": {
-      //"keys": "#d1c6a1", // Key color module名字的颜色
-      "title": "#cdc6b4", // Title color 主机名的颜色
-      "output": "#cdc6b4"
+      "title": "#c99713", // Title color 主机名的颜色（USR 值颜色，与其他项一致）
+      "output": "#c99713"
     },
+    "percent": {
+      "type": ["num", "num-color"],
+      "ndigits": 0,
+      "color": {
+        "green": "#87ceeb",
+        "yellow": "#87ceeb",
+        "red": "#87ceeb"
+      }
+    }
   },
   "modules": [
     "break",
+    "break",
     {
-      "type": "os", //这是哪个module
-      "key": "OS", //module名字的显示
-      // "keyColor": "#00ff00",      //module名字颜色
-      // "format": "{name} {version}",    //具体内容
-      "keyColor": "#dcc66e",
-   
+      "type": "os",
+      "key": "OS",
+      "keyColor": "#c99713",
+      "outputColor": "#c99713"
     },
     {
       "type": "kernel",
       "key": " ├   KER ",
-      "keyColor": "#dcc66e",
-
+      "keyColor": "#c99713",
+      "outputColor": "#c99713"
     },
     {
       "type": "packages",
       "key": " ├   PAK ",
       "format": "{all}",
-      "keyColor": "#dcc66e",
+      "keyColor": "#c99713",
+      "outputColor": "#c99713"
     },
     {
-      "type": "title",
+      "type": "command",
+      "text": "echo $USER@$HOSTNAME",
+      "format": "{result}",
       "key": " ├   USR ",
-      "keyColor": "#dcc66e",
+      "keyColor": "#c99713",
+      "outputColor": "#c99713"
     },
     {
       "type": "locale",
       "key": " └   LOC ",
-      "keyColor": "#dcc66e",
+      "keyColor": "#c99713",
+      "outputColor": "#c99713"
     },
     "break",
     "break",
     {
       "type": "wm",
       "key": "WM",
-      "keyColor": "#aad0b3",
-   },
+      "keyColor": "#46a56f",
+      "outputColor": "#46a56f"
+    },
     {
       "type": "de",
       "key": " ├ 󱈹  DES ",
-      "keyColor": "#aad0b3",
-     //"outputColor": "#aad0b3"
+      "keyColor": "#46a56f",
+      "outputColor": "#46a56f"
     },
     {
       "type": "shell",
       "key": " ├   SHE ",
-      "keyColor": "#aad0b3",
-      //"outputColor": "#aad0b3"
+      "keyColor": "#46a56f",
+      "outputColor": "#46a56f"
     },
     {
       "type": "terminal",
       "key": " ├   TER ",
-      "keyColor": "#aad0b3",
-      //"outputColor": "#aad0b3"
+      "keyColor": "#46a56f",
+      "outputColor": "#46a56f"
     },
     {
       "type": "terminalfont",
       "key": " └   TFO ",
-      "keyColor": "#aad0b3",
-      //"outputColor": "#aad0b3"
+      "keyColor": "#46a56f",
+      "outputColor": "#46a56f"
     },
     "break",
     "break",
     {
       "type": "host",
       "key": "PC ",
-      "keyColor": "#eee2bc",
-      //"outputColor": "#d1c6a1"
+      "keyColor": "#87ceeb",
+      "outputColor": "#87ceeb"
     },
     {
-        "type": "custom",
-        "condition": { "succeeded": false }, // 仅当上一个模块（即host模块）失败时才运行
-        "key": "PC",
-        "format": "Flandery's ArchLinux"      // 这里改成你想要显示的备用文本
+      "type": "custom",
+      "condition": { "succeeded": false },
+      "key": "PC",
+      "format": "Flandery's NixOS",
+      "keyColor": "#87ceeb",
+      "outputColor": "#87ceeb"
     },
     {
       "type": "cpu",
       "key": " ├   CPU ",
-      "keyColor": "#eee2bc",
-      //"outputColor": "#d1c6a1"
+      "keyColor": "#87ceeb",
+      "outputColor": "#87ceeb"
     },
     {
       "type": "memory",
       "key": " ├   MEM ",
-      "keyColor": "#eee2bc",
-      //"outputColor": "#d1c6a1"
+      "keyColor": "#87ceeb",
+      "outputColor": "#87ceeb"
     },
     {
       "type": "gpu",
       "key": " ├ 󰢮  GPU ",
       "format": "{1} {2}",
-      "keyColor": "#eee2bc",
-      //"outputColor": "#d1c6a1"
+      "keyColor": "#87ceeb",
+      "outputColor": "#87ceeb"
     },
     {
       "type": "display",
       "key": " ├   MON ",
       "format": "{name} {width}x{height}@{refresh-rate} ",
-      "keyColor": "#eee2bc",
-      //"outputColor": "#d1c6a1"
+      "keyColor": "#87ceeb",
+      "outputColor": "#87ceeb"
     },
     {
       "type": "disk",
       "key": " └ 󰋊  DIS ",
-      "keyColor": "#eee2bc",
-      //"outputColor": "#d1c6a1"
+      "keyColor": "#87ceeb",
+      "outputColor": "#87ceeb"
     },
     "break",
     "break",
-    { "type": "custom",
+    {
+      "type": "custom",
       "key": " 哔哩哔哩 (゜-゜)つロ 干杯~",
-      "keyColor": "#B0C4DE",
+      "keyColor": "#7396bd"
     },
     "break",
     "break",
