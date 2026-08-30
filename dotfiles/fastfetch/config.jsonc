@@ -5,8 +5,8 @@
     "source": "~/.config/fastfetch/Momoko.png",
     "width": 30,
     "padding": {
-      "top": 2,
-      "left": 1,
+      "top": 1,
+      "left": 3,
       "right": 1
     }
   },
@@ -27,7 +27,7 @@
     }
   },
   "modules": [
-    "break",
+    //"break",
     "break",
     {
       "type": "os",
