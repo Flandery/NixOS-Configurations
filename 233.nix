@@ -2,7 +2,7 @@
 {
  users.users.Flandery = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "gamemode" "networkmanager" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "gamemode" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
    #     tree
      ];
@@ -189,6 +189,32 @@
  programs.fish.enable = true;
  programs.clash-verge.serviceMode = true;
  networking.firewall.enable = false;
+ #虚拟机桥接网络
+ networking.networkmanager.ensureProfiles.profiles = {
+  br0 = {
+   connection = {
+    id = "br0";
+    type = "bridge";
+    interface-name = "br0";
+    autoconnect = true;
+   };
+   bridge = {
+    stp = false;
+   };
+   ipv4.method = "auto";
+   ipv6.method = "auto";
+  };
+  br0-slave = {
+   connection = {
+    id = "br0-slave";
+    type = "ethernet";
+    interface-name = "enp7s0";
+    master = "br0";
+    slave-type = "bridge";
+    autoconnect = true;
+   };
+  };
+ };
  users.defaultUserShell = pkgs.fish;
  programs.direnv.enable = true;
  programs.gamemode.enable = true;
@@ -402,5 +428,17 @@ nix.settings = {
     max-jobs = 1;
     cores = 4;
 };
+
+#虚拟机相关
+virtualisation.libvirtd = {
+  enable = true;
+  qemu = {
+    swtpm.enable = true;
+  };
+  onShutdown = "shutdown";
+};
+programs.virt-manager.enable = true;
+virtualisation.spiceUSBRedirection.enable = true;
+boot.kernelModules = [ "kvm-amd" ];
 
 }

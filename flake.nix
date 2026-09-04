@@ -71,7 +71,7 @@
         inputs.nur.repos.iopq.modules.nixos.xraya
         inputs.nix-flatpak.nixosModules.nix-flatpak
          ./configuration.nix
-         ./others/openldap.nix
+#         ./others/openldap.nix
          ./desktop/DesktopEnvironmentKDE.nix
         # ... other modules
         #./hardware-configuration.nix

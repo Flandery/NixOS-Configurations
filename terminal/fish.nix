@@ -18,8 +18,8 @@
       vi = "nvim";   # 将 vi 也指向 nvim
       f = "clear; fastfetch";
       m = "musicfox";
-      ls = "eza --icons";
-      lt = "eza --icons -T -L 2";
+      ls = "eza --icons=auto";
+      lt = "eza --icons=auto -T -L 2";
       };
      };
    # 声明式管理 Starship 提示符
