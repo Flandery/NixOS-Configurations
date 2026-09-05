@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 
 let
-  configFile = config.lib.file.mkOutOfStoreSymlink "/FlanderysConfigurations/FlanderysNixOSConfigurations/dotfiles/niri/config.kdl";
-  animationsFile = config.lib.file.mkOutOfStoreSymlink "/FlanderysConfigurations/FlanderysNixOSConfigurations/dotfiles/niri/animations.kdl";
-  effectsFile = config.lib.file.mkOutOfStoreSymlink "/FlanderysConfigurations/FlanderysNixOSConfigurations/dotfiles/niri/niri_effects.kdl";
-  rulesFile = config.lib.file.mkOutOfStoreSymlink "/FlanderysConfigurations/FlanderysNixOSConfigurations/dotfiles/niri/niri_rules.kdl";
+  configFile = config.lib.file.mkOutOfStoreSymlink "${config.configDir}/dotfiles/niri/config.kdl";
+  animationsFile = config.lib.file.mkOutOfStoreSymlink "${config.configDir}/dotfiles/niri/animations.kdl";
+  effectsFile = config.lib.file.mkOutOfStoreSymlink "${config.configDir}/dotfiles/niri/niri_effects.kdl";
+  rulesFile = config.lib.file.mkOutOfStoreSymlink "${config.configDir}/dotfiles/niri/niri_rules.kdl";
 in {
  xdg.configFile = {
   "niri/config.kdl".source = configFile;

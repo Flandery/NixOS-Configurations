@@ -25,6 +25,9 @@
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
 
+  # 全局环境变量：指向配置仓库路径（PAM 登录时注入，所有进程可见）
+  environment.sessionVariables.NIXOS_CONFIG = config.configDir;
+
   # Set your time zone.
   # time.timeZone = "Europe/Amsterdam";
 

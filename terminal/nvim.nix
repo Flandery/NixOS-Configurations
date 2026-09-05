@@ -17,5 +17,5 @@
 
   # 将 LazyVim 配置软链到 ~/.config/nvim
   xdg.configFile."nvim".source =
-    config.lib.file.mkOutOfStoreSymlink "/FlanderysConfigurations/FlanderysNixOSConfigurations/dotfiles/nvim";
+    config.lib.file.mkOutOfStoreSymlink "${config.configDir}/dotfiles/nvim";
 }

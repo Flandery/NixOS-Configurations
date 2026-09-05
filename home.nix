@@ -10,6 +10,7 @@
   };
   services.polkit-gnome.enable = true; # polkit
   imports = [
+    ./paths.nix
     ./terminal/fish.nix
     ./terminal/kitty.nix
     #./desktop/cursors.nix

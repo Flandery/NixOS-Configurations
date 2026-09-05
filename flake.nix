@@ -40,6 +40,7 @@
         inputs.nur.repos.iopq.modules.nixos.xraya
         inputs.nix-flatpak.nixosModules.nix-flatpak
          ./configuration.nix
+         ./paths.nix
 #         ./others/openldap.nix
          ./desktop/DesktopEnvironmentGNOME.nix
         # ... other modules
@@ -71,6 +72,7 @@
         inputs.nur.repos.iopq.modules.nixos.xraya
         inputs.nix-flatpak.nixosModules.nix-flatpak
          ./configuration.nix
+         ./paths.nix
 #         ./others/openldap.nix
          ./desktop/DesktopEnvironmentKDE.nix
         # ... other modules
