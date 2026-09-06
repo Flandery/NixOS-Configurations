@@ -34,7 +34,7 @@
     #vimPlugins.nvim-treesitter-parsers.cmake
     lutris
     gcc
-    splayer
+    splayer-next
     btop
     go-musicfox
 #    vimPlugins.nvim-treesitter
@@ -133,7 +133,10 @@
     opencode-desktop
     opencode
     mpvpaper
+    bottles
     inputs.ai-usagebar.packages.${pkgs.stdenv.hostPlatform.system}.default
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.zcode
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
