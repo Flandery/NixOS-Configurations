@@ -134,6 +134,7 @@
     opencode
     mpvpaper
     bottles
+    parted
     inputs.ai-usagebar.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.zcode
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
@@ -199,22 +200,22 @@
     id = "br0";
     type = "bridge";
     interface-name = "br0";
-    autoconnect = true;
+autoconnect = false;
+    };
+    bridge = {
+     stp = false;
+    };
+    ipv4.method = "auto";
+    ipv6.method = "auto";
    };
-   bridge = {
-    stp = false;
-   };
-   ipv4.method = "auto";
-   ipv6.method = "auto";
-  };
-  br0-slave = {
-   connection = {
-    id = "br0-slave";
-    type = "ethernet";
-    interface-name = "enp7s0";
-    master = "br0";
-    slave-type = "bridge";
-    autoconnect = true;
+   br0-slave = {
+    connection = {
+     id = "br0-slave";
+     type = "ethernet";
+     interface-name = "enp7s0";
+     master = "br0";
+     slave-type = "bridge";
+     autoconnect = false;
    };
   };
  };
@@ -427,10 +428,10 @@ nix.settings.auto-optimise-store = true;
     "electron-39.8.10"
   ];
 
-nix.settings = {
-    max-jobs = 1;
-    cores = 4;
-};
+#nix.settings = {
+#    max-jobs = 1;
+#    cores = 4;
+#};
 
 #虚拟机相关
 virtualisation.libvirtd = {

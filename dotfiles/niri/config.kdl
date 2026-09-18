@@ -120,6 +120,13 @@ input {
     position x=1280 y=0
 }
 
+output "HDMI-A-1"{
+	mode "1920x1080@180.000"
+	position x=0 y=0
+	focus-at-startup
+	variable-refresh-rate
+}
+
 output "DP-2"{
 	//分辨率和刷新率
 	mode "2560x1440@144.00"
