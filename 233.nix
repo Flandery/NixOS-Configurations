@@ -135,6 +135,7 @@
     mpvpaper
     bottles
     parted
+    android-tools
     inputs.ai-usagebar.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.zcode
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
