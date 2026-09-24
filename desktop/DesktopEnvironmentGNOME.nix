@@ -47,6 +47,7 @@ environment.systemPackages = with pkgs; [
     gnomeExtensions.quick-settings-audio-panel
     gnomeExtensions.search-light
     gnomeExtensions.open-bar
+    refine
   ];
  #Niri Config
  security.polkit.enable = true; # polkit

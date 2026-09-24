@@ -28,7 +28,7 @@
     inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
     xwayland-satellite
     #gnome-tweaks
-    refine
+    #refine
     mangohud
     mangojuice
     #vimPlugins.nvim-treesitter-parsers.cmake
