@@ -139,6 +139,7 @@
     inputs.ai-usagebar.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.zcode
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
+    gimp
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;

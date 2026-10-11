@@ -53,7 +53,7 @@
 }:
 
 let
-  version = "3.11.2";
+  version = "3.14.4";
 
   platform = {
     x86_64-linux = "linux-x64";
@@ -62,7 +62,10 @@ let
 
   src = fetchurl {
     url = "https://cdn-zcode.z.ai/zcode/electron/releases/${version}/${platform}/ZCode-${version}-${platform}.deb";
-    hash = "sha256-fRO4OGMTAs9h4bgEDLZ/NJ7CNWZ5WJfxdGQyxcXXfVs=";
+    hash = {
+      x86_64-linux = "sha256-11NhiEXl4FfCnMvDkXwIpMjZk1Xe731qD00pFrpp5L4=";
+      aarch64-linux = "sha256-aHTQsS+VIoQHRtgfOaABZIvmju06qAwTSKTjYMRO9xg=";
+    }.${stdenvNoCC.hostPlatform.system};
   };
 
   desktopItem = makeDesktopItem {
