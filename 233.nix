@@ -140,6 +140,7 @@
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.zcode
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
     gimp
+    chromium
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;

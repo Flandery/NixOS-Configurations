@@ -121,7 +121,7 @@ input {
 }
 
 output "HDMI-A-1"{
-	mode "1920x1080@180.000"
+	mode "1920x1080@143.999"
 	position x=0 y=0
 	focus-at-startup
 	variable-refresh-rate
