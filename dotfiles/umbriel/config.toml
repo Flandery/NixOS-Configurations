@@ -1,0 +1,325 @@
+# =====================================================================
+# Umbriel 配置 — 由 niri 配置迁移而来
+# ---------------------------------------------------------------------
+# 来源: ~/.config/niri/{config.kdl, noctalia.kdl, niri_effects.kdl, niri_rules.kdl}
+# 重点: 快捷键 ([keybinds]) 与显示器 ([output.*])；其余能对应的部分也一并迁移
+# 使用: 复制到 ~/.config/umbriel/config.toml，Umbriel 会自动重载保存的改动
+# 校验: umbriel config validate
+# 文档: https://docs.noctalia.dev/umbriel/
+#
+# 迁移说明:
+#  - niri 的 Mod 在 TTY 下等于 Super，这里用 general.mod_key = "Super" 固定
+#  - Umbriel 没有对应动作的 niri 绑定已注释并写明原因（Mod+Ctrl+R / Mod+Ctrl+F / Mod+Ctrl+C）
+#  - niri 的内建截图改为 Noctalia IPC（noctalia msg screenshot-*）
+#  - 动画（animations.kdl 的 NyxNiri 弹簧参数）未迁移，需在 Umbriel 的 [animation] 另行配置
+#  - 窗口规则只迁移了「全局毛玻璃」与「Noctalia 设置窗口浮动」两条（见下方）
+# =====================================================================
+
+[general]
+# niri 的 Mod 键（TTY 下为 Super）
+mod_key = "Super"
+# niri: spawn-at-startup "noctalia" / "wl-paste --watch cliphist store"
+# 修改后需要重启 Umbriel 才会生效
+autostart = ["noctalia", "wl-paste --watch cliphist store"]
+
+[environment]
+# niri: environment { QS_ICON_THEME "Adwaita" }
+# 修改后需要重启 Umbriel 才会生效
+QS_ICON_THEME = "Adwaita"
+
+[include.optional]
+# Noctalia 内置的 Umbriel 模板会把主题配色生成到该文件（边框/标题栏/标签栏/overview 等），
+# 效果相当于 niri 里 Noctalia 生成的 noctalia.kdl（边框色 "#5b6000" 等）。
+# 启用方式: Noctalia 设置 → Templates → Compositors → Umbriel
+files = ["noctalia.toml"]
+
+# =====================================================================
+# 输入设备（niri 的 input / cursor 段）
+# =====================================================================
+
+[input.cursor]
+theme = "Breeze_Light"     # niri: xcursor-theme
+size = 27                  # niri: xcursor-size
+hide_timeout_ms = 15000    # niri: hide-after-inactive-ms 15000
+
+[input.keyboard]
+numlock_toggle = true      # niri: numlock
+# layout/variant/options/model 留空 => 与 niri 一样跟随系统 keymap（localectl）
+
+[input.touchpad]
+tap = true                 # niri: tap
+natural_scroll = true      # niri: natural-scroll
+
+[input.mouse]
+accel_profile = "flat"     # niri: accel-profile "flat"
+
+[input.focus]
+# niri: focus-follows-mouse max-scroll-amount="0%"
+follows_mouse = true
+follows_mouse_max_scroll = 0.0
+
+# =====================================================================
+# 布局（niri 的 layout 段）
+# =====================================================================
+
+[layout]
+mode = "scrolling"                      # niri 为可滚动的列布局
+gap = 20                                # niri: gaps 20
+extent_presets = [0.333, 0.5, 0.667]    # niri: preset-column-widths 1/3, 1/2, 2/3
+
+[layout.scrolling]
+default_extent_fraction = 0.5           # niri: default-column-width proportion 0.5
+center_focused = "never"                # niri: center-focused-column "never"
+
+# =====================================================================
+# 显示器（niri 的 output 段）
+# ---------------------------------------------------------------------
+# 连接名可用 `umbriel outputs` 查看，也可以直接用显示器标识，例如:
+#   [output."厂商 型号 序列号"]
+# niri 里 HDMI-A-1 与 DP-2 的 position 都写了 x=0 y=0（重叠时 niri 会自动排列），
+# 这里显式排成左右相邻：HDMI 在左，DP-2 紧贴其右侧（1920 是 HDMI 的逻辑宽度）。
+# =====================================================================
+
+[output.HDMI-A-1]
+mode = "1920x1080@144"      # niri: 1920x1080@143.999
+position = [0, 0]
+focus_at_startup = true     # niri: focus-at-startup
+vrr = "always"              # niri: variable-refresh-rate（受支持时始终开启）
+
+[output.DP-2]
+mode = "2560x1440@144"      # niri: 2560x1440@144.00
+position = [1920, 0]
+focus_at_startup = true
+# scale = 1.33              # niri 里被注释；需要时取消注释
+# transform = "90"          # niri 里被注释（可取 normal/90/180/270/flipped 等）
+
+# 注: 原 niri 配置里两个屏幕都设了 focus-at-startup；
+#     如果启动后光标所在屏幕不符合预期，删掉其中一个即可。
+
+# niri 中 eDP-1 整段被 /- 注释掉（未启用），这里同样保留为注释备用:
+# [output."eDP-1"]
+# mode = "1920x1080@120"    # niri: 1920x1080@120.030
+# scale = 2
+# position = [4480, 0]      # 启用时放在 DP-2 右侧(1920+2560)；原 niri 的 x=1280 会与其他屏重叠
+# transform = "normal"
+
+# =====================================================================
+# 外观（niri 的焦点环/圆角、niri_effects.kdl 的模糊）
+# ---------------------------------------------------------------------
+# 边框颜色交给 Noctalia 模板生成（见上方 [include.optional]），与 niri 的 noctalia.kdl 同理
+# =====================================================================
+
+[appearance]
+prefer_no_csd = true        # niri: prefer-no-csd
+border_width = 4            # niri: focus-ring width 4
+corner_radius = 12          # niri_rules.kdl: geometry-corner-radius 12
+
+[appearance.blur]
+# niri_effects.kdl: blur { passes 3; offset 2.3; noise 0.001; saturation 2 }
+# Umbriel 的模糊需要窗口规则/图层规则逐项开启（见文末规则），这里是全局参数
+enabled = true
+optimized = false           # ← 对应 niri 的 xray=false：模糊窗口正后方的实际内容；
+                            #   true（默认）只采样窗口栈下方的壁纸背景做共享缓存，会直接透到壁纸
+passes = 3
+radius = 3
+noise = 0.001
+saturation = 2.0
+
+[appearance.shadow]
+# niri 里阴影未启用（shadow 段里的 "on" 被注释），这里保持关闭
+enabled = false
+softness = 30               # niri: softness 30
+offset_y = 5                # niri: offset y=5
+
+[colors]
+shadow = "#00000077"        # niri: shadow color "#0007"
+
+# =====================================================================
+# 窗口规则 / 图层规则（部分迁移自 niri_effects.kdl 与 niri_rules.kdl）
+# =====================================================================
+
+# 全局毛玻璃：对应 niri_effects.kdl 中「无 match 的 background-effect blur true」规则
+[[window_rule]]
+blur = true
+blur_optimized = false      # niri: xray false（模糊窗口后面的内容，而不是壁纸层）
+
+# Noctalia 设置窗口浮动（来自 Noctalia 官方 Umbriel 文档；对应 niri 里 dev.noctalia.Noctalia 的 open-floating）
+[[window_rule]]
+match.app_id = "^dev\\.noctalia\\.Noctalia$"
+default_floating = true
+default_floating_size_px = { width = 1020, height = 900 }
+
+# Noctalia 的 bar/通知/面板/OSD 图层模糊（Noctalia 官方推荐的 Umbriel 配置）
+[[layer_rule]]
+match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+blur = true
+blur_ignore_alpha = 0.5
+blur_optimized = false
+
+# =====================================================================
+# 快捷键（niri binds → Umbriel [keybinds]）
+# =====================================================================
+
+[keybinds]
+
+# —— 系统 / 终端 ——
+"Mod+Shift+Slash" = "cheatsheet-toggle"                 # niri: show-hotkey-overlay
+"Mod+T" = "spawn:kitty"                                 # niri: spawn "kitty"
+"Super+Alt+L" = "spawn:swaylock"                        # 锁屏
+"Super+Alt+S" = { action = "spawn:pkill orca || exec orca", allow_when_locked = true }
+
+# —— 声音 / 媒体 / 亮度 ——
+# 保留 niri 的直接调用方式（wpctl / playerctl / brightnessctl）。
+# 若想让 Noctalia 显示音量、亮度 OSD，可改成 spawn:noctalia msg volume-up / brightness-up / media toggle 等 IPC 命令。
+"XF86AudioRaiseVolume" = { action = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0", allow_when_locked = true }
+"XF86AudioLowerVolume" = { action = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-", allow_when_locked = true }
+"XF86AudioMute" = { action = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", allow_when_locked = true, repeat = false }
+"XF86AudioMicMute" = { action = "spawn:wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle", allow_when_locked = true, repeat = false }
+"XF86AudioPlay" = { action = "spawn:playerctl play-pause", allow_when_locked = true, repeat = false }
+"XF86AudioStop" = { action = "spawn:playerctl stop", allow_when_locked = true, repeat = false }
+"XF86AudioPrev" = { action = "spawn:playerctl previous", allow_when_locked = true }
+"XF86AudioNext" = { action = "spawn:playerctl next", allow_when_locked = true }
+"XF86MonBrightnessUp" = { action = "spawn:brightnessctl --class=backlight set +10%", allow_when_locked = true }
+"XF86MonBrightnessDown" = { action = "spawn:brightnessctl --class=backlight set 10%-", allow_when_locked = true }
+
+# —— 启动应用 ——
+"Mod+E" = "spawn:thunar"
+"Mod+Alt+V" = "spawn:clipse-gui"
+"Mod+M" = "spawn:firefox"
+"Mod+D" = "spawn:noctalia msg panel-toggle launcher"
+
+# —— 焦点：列 / 窗口 ——
+"Mod+WheelUp" = "window-focus-left"                     # niri: Mod+WheelScrollUp
+"Mod+WheelDown" = "window-focus-right"
+"Mod+WheelLeft" = "window-focus-left"
+"Mod+WheelRight" = "window-focus-right"
+"Mod+Shift+WheelUp" = "window-focus-left"
+"Mod+Shift+WheelDown" = "window-focus-right"
+"Mod+Up" = "workspace-previous"                         # niri: focus-workspace-up
+"Mod+Down" = "workspace-next"                           # niri: focus-workspace-down
+"Mod+Left" = "window-focus-left"
+"Mod+Right" = "window-focus-right"
+"Mod+H" = "window-focus-left"
+"Mod+J" = "window-focus-down"
+"Mod+K" = "window-focus-up"
+"Mod+L" = "window-focus-right"
+"Mod+Home" = "column-focus-first"
+"Mod+End" = "column-focus-last"
+
+# —— 移动：列 / 窗口 ——
+"Mod+Ctrl+Left" = "column-move-left"
+"Mod+Ctrl+Right" = "column-move-right"
+"Mod+Ctrl+Up" = "window-move-up"
+"Mod+Ctrl+Down" = "window-move-down"
+"Mod+Ctrl+H" = "column-move-left"
+"Mod+Ctrl+J" = "window-move-down"
+"Mod+Ctrl+K" = "window-move-up"
+"Mod+Ctrl+L" = "column-move-right"
+"Mod+Ctrl+WheelLeft" = "column-move-left"
+"Mod+Ctrl+WheelRight" = "column-move-right"
+"Mod+Ctrl+Shift+WheelUp" = "column-move-left"
+"Mod+Ctrl+Shift+WheelDown" = "column-move-right"
+"Mod+Ctrl+Home" = "column-move-to-first"
+"Mod+Ctrl+End" = "column-move-to-last"
+
+# —— 显示器之间 ——
+"Mod+Shift+Left" = "output-focus-left"                  # niri: focus-monitor-left
+"Mod+Shift+Right" = "output-focus-right"
+"Mod+Shift+Up" = "output-focus-up"
+"Mod+Shift+Down" = "output-focus-down"
+"Mod+Shift+H" = "output-focus-left"
+"Mod+Shift+J" = "output-focus-down"
+"Mod+Shift+K" = "output-focus-up"
+"Mod+Shift+L" = "output-focus-right"
+"Mod+Shift+Ctrl+Left" = "column-move-to-output-left"    # niri: move-column-to-monitor-*
+"Mod+Shift+Ctrl+Right" = "column-move-to-output-right"
+"Mod+Shift+Ctrl+Up" = "column-move-to-output-up"
+"Mod+Shift+Ctrl+Down" = "column-move-to-output-down"
+"Mod+Shift+Ctrl+H" = "column-move-to-output-left"
+"Mod+Shift+Ctrl+J" = "column-move-to-output-down"
+"Mod+Shift+Ctrl+K" = "column-move-to-output-up"
+"Mod+Shift+Ctrl+L" = "column-move-to-output-right"
+
+# —— 工作区 ——
+"Mod+Page_Up" = "workspace-previous"                    # niri: focus-workspace-up
+"Mod+Page_Down" = "workspace-next"
+"Mod+I" = "workspace-previous"
+"Mod+U" = "workspace-next"
+"Mod+Ctrl+Page_Up" = "column-move-to-workspace-previous"  # niri: move-column-to-workspace-*
+"Mod+Ctrl+Page_Down" = "column-move-to-workspace-next"
+"Mod+Ctrl+I" = "column-move-to-workspace-previous"
+"Mod+Ctrl+U" = "column-move-to-workspace-next"
+"Mod+Ctrl+WheelUp" = { action = "column-move-to-workspace-previous", cooldown_ms = 150 }   # niri: cooldown-ms=150
+"Mod+Ctrl+WheelDown" = { action = "column-move-to-workspace-next", cooldown_ms = 150 }
+"Mod+Shift+Page_Up" = "workspace-move-up"               # niri: move-workspace-*
+"Mod+Shift+Page_Down" = "workspace-move-down"
+"Mod+Shift+I" = "workspace-move-up"
+"Mod+Shift+U" = "workspace-move-down"
+"Mod+1" = "workspace-switch:1"
+"Mod+2" = "workspace-switch:2"
+"Mod+3" = "workspace-switch:3"
+"Mod+4" = "workspace-switch:4"
+"Mod+5" = "workspace-switch:5"
+"Mod+6" = "workspace-switch:6"
+"Mod+7" = "workspace-switch:7"
+"Mod+8" = "workspace-switch:8"
+"Mod+9" = "workspace-switch:9"
+"Mod+Ctrl+1" = "column-move-to-workspace:1"
+"Mod+Ctrl+2" = "column-move-to-workspace:2"
+"Mod+Ctrl+3" = "column-move-to-workspace:3"
+"Mod+Ctrl+4" = "column-move-to-workspace:4"
+"Mod+Ctrl+5" = "column-move-to-workspace:5"
+"Mod+Ctrl+6" = "column-move-to-workspace:6"
+"Mod+Ctrl+7" = "column-move-to-workspace:7"
+"Mod+Ctrl+8" = "column-move-to-workspace:8"
+"Mod+Ctrl+9" = "column-move-to-workspace:9"
+
+# —— 列的合并 / 拆出 ——
+"Mod+BracketLeft" = "window-consume-or-expel-left"      # niri: consume-or-expel-window-left
+"Mod+BracketRight" = "window-consume-or-expel-right"
+"Mod+Comma" = "window-consume-from-right"               # niri: consume-window-into-column
+"Mod+Period" = "window-consume-or-expel-right"          # niri: expel-window-from-column（Umbriel 无纯 expel 动作，取最接近者）
+
+# —— 尺寸 / 最大化 / 全屏 ——
+"Mod+R" = "window-cycle-primary-extent"                 # niri: switch-preset-column-width
+"Mod+Shift+R" = "window-cycle-secondary-extent"         # niri: switch-preset-window-height
+# "Mod+Ctrl+R" = "..."   # niri: reset-window-height；Umbriel 没有「重置为自动高度」动作，故未迁移
+"Mod+Minus" = "window-modify-primary-extent:-0.1"       # niri: set-column-width "-10%"
+"Mod+Equal" = "window-modify-primary-extent:+0.1"
+"Mod+Shift+Minus" = "window-modify-secondary-extent:-0.1"  # niri: set-window-height "-10%"
+"Mod+Shift+Equal" = "window-modify-secondary-extent:+0.1"
+"Mod+F" = "window-toggle-maximize"                      # niri: maximize-column
+"Mod+Shift+F" = "window-toggle-fullscreen"              # niri: fullscreen-window
+# "Mod+Ctrl+F" = "..."   # niri: expand-column-to-available-width；无直接对应，最接近的是 window-toggle-maximize
+"Mod+C" = "column-center"                               # niri: center-column
+# "Mod+Ctrl+C" = "..."   # niri: center-visible-columns；Umbriel 无对应动作
+
+# —— 浮动 / 标签 ——
+"Mod+Space" = "window-toggle-floating"                  # niri: toggle-window-floating
+"Mod+Shift+Space" = "window-focus-switch-floating"      # niri: switch-focus-between-floating-and-tiling
+"Mod+W" = "column-toggle-tabbed"                        # niri: toggle-column-tabbed-display
+
+# —— 截图 ——
+# niri 的内建截图改为 Noctalia IPC；截图保存目录等策略在 Noctalia 的 [shell.screenshot] 设置里，
+# 如需与 niri 一致，可把目录设为 ~/Pictures/Screenshots。
+"Print" = "spawn:noctalia msg screenshot-region"        # niri: screenshot
+"Ctrl+Print" = "spawn:noctalia msg screenshot-fullscreen"  # niri: screenshot-screen
+"Alt+Print" = "spawn:noctalia msg screenshot-window"    # niri: screenshot-window
+
+# —— 概览 / 系统 ——
+"Mod+O" = { action = "overview-toggle", repeat = false }             # niri: toggle-overview
+"Mod+Q" = { action = "window-close", repeat = false }                # niri: close-window
+"Mod+Escape" = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true, repeat = false }  # niri: allow-inhibiting=false
+"Mod+Shift+E" = { action = "session-quit", repeat = false }          # niri: quit（会弹确认框）
+"Ctrl+Alt+Delete" = { action = "session-quit", repeat = false }
+"Mod+Shift+P" = { action = "dpms-off", repeat = false }              # niri: power-off-monitors
+
+# =====================================================================
+# 备注
+# ---------------------------------------------------------------------
+# * niri 的 scratchpad 窗口规则（app-id=scratchpad）没有对应快捷键；Umbriel 自带 scratchpad，
+#   可用 window-toggle-scratchpad / scratchpad-toggle 等动作自行绑定（Mod+Space 已被浮动切换占用）。
+# * 动画参数（animations.kdl 的 NyxNiri 弹簧曲线）未迁移，可在 Umbriel 的 [animation] 中配置。
+# * 其余 niri 窗口规则（圆角/透明度、画中画浮动、游戏去特效、WezTerm 等）未迁移，
+#   可按需改写为 [[window_rule]]，参考 https://docs.noctalia.dev/umbriel/window-rules/
+# =====================================================================

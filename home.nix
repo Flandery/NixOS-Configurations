@@ -15,6 +15,7 @@
     ./terminal/kitty.nix
     #./desktop/cursors.nix
     ./desktop/niri.nix
+    ./desktop/umbriel.nix
     ./terminal/fastfetch.nix
     ./terminal/ghostty.nix
     ./terminal/nvim.nix

@@ -27,6 +27,7 @@
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
     ai-usagebar.url = "github:akitaonrails/ai-usagebar";
+    umbriel.url = "github:noctalia-dev/umbriel";
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: let
@@ -47,6 +48,7 @@
         inputs.nur.modules.nixos.default
         inputs.nur.repos.iopq.modules.nixos.xraya
         inputs.nix-flatpak.nixosModules.nix-flatpak
+        inputs.umbriel.nixosModules.default
          ./configuration.nix
          ./paths.nix
 #         ./others/openldap.nix
@@ -79,6 +81,7 @@
         inputs.nur.modules.nixos.default
         inputs.nur.repos.iopq.modules.nixos.xraya
         inputs.nix-flatpak.nixosModules.nix-flatpak
+        inputs.umbriel.nixosModules.default
          ./configuration.nix
          ./paths.nix
 #         ./others/openldap.nix

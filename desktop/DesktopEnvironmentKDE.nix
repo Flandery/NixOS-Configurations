@@ -58,4 +58,6 @@ environment.systemPackages = with pkgs; [
 # 让 plasmashell 找到 C++ QML 模块（com.github.luisbocanegra.svwr），启用 Plasma 昼夜循环检测
 environment.sessionVariables.NIXPKGS_QT6_QML_IMPORT_PATH = "${smartVideoWallpaper}/lib/qt-6/qml";
 
+programs.umbriel.enable = true;
+
 }
