@@ -141,6 +141,10 @@
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
     gimp
     chromium
+    #breeze #实测没有这个包，下面两个也不存在，该死的AI竟然误导我喵       # qt6 版部件样式
+    #breeze.qt5   # 要给 Qt5 应用上色才需要
+    #breeze-icons
+    darkly
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
