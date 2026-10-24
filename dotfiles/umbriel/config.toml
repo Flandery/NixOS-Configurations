@@ -111,8 +111,8 @@ focus_at_startup = true
 
 [appearance]
 prefer_no_csd = true        # niri: prefer-no-csd
-border_width = 4            # niri: focus-ring width 4
-corner_radius = 12          # niri_rules.kdl: geometry-corner-radius 12
+border_width = 2            # niri: focus-ring width 4
+corner_radius = 16          # niri_rules.kdl: geometry-corner-radius 12
 
 [appearance.blur]
 # niri_effects.kdl: blur { passes 3; offset 2.3; noise 0.001; saturation 2 }
@@ -120,7 +120,7 @@ corner_radius = 12          # niri_rules.kdl: geometry-corner-radius 12
 enabled = true
 optimized = false           # ← 对应 niri 的 xray=false：模糊窗口正后方的实际内容；
                             #   true（默认）只采样窗口栈下方的壁纸背景做共享缓存，会直接透到壁纸
-passes = 3
+passes = 1
 radius = 3
 noise = 0.001
 saturation = 2.0
@@ -183,7 +183,7 @@ blur_optimized = false
 "XF86MonBrightnessDown" = { action = "spawn:brightnessctl --class=backlight set 10%-", allow_when_locked = true }
 
 # —— 启动应用 ——
-"Mod+E" = "spawn:thunar"
+"Mod+E" = "spawn:dolphin"
 "Mod+Alt+V" = "spawn:clipse-gui"
 "Mod+M" = "spawn:firefox"
 "Mod+D" = "spawn:noctalia msg panel-toggle launcher"

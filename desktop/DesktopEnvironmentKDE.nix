@@ -60,4 +60,6 @@ environment.sessionVariables.NIXPKGS_QT6_QML_IMPORT_PATH = "${smartVideoWallpape
 
 programs.umbriel.enable = true;
 
+xdg.mime.defaultApplications."inode/directory" = "org.kde.dolphin.desktop";
+
 }

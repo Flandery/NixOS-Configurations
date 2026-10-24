@@ -21,6 +21,7 @@
     ./terminal/nvim.nix
     ./desktop/avatar.nix
     ./flatpak.nix
+    ./others/mimeapps.nix   # 文件夹默认用 Dolphin（同时对 Steam 沙箱内生效）
     # 你可以继续导入更多模块
     #./noctalia.nix
   ];

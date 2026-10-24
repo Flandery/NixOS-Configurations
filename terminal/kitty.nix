@@ -7,7 +7,7 @@
     settings = {
       # 字体设置
       font_family = "Adwaita Mono";
-      font_size = 16;
+      font_size = 14;
       
       # 窗口设置
       window_padding_width = 5;
