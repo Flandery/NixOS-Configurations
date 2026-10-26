@@ -53,6 +53,7 @@ environment.systemPackages = with pkgs; [
   plasmusic-toolbar
   application-title-bar
   smartVideoWallpaper
+  inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
 
 # 让 plasmashell 找到 C++ QML 模块（com.github.luisbocanegra.svwr），启用 Plasma 昼夜循环检测

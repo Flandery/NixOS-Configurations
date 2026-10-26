@@ -48,6 +48,7 @@ environment.systemPackages = with pkgs; [
     gnomeExtensions.search-light
     gnomeExtensions.open-bar
     refine
+    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
  #Niri Config
  security.polkit.enable = true; # polkit

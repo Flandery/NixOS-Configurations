@@ -25,7 +25,7 @@
     yazi
     kitty
     fuzzel
-    inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+    #inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default #弃用，在其他地方配置。
     xwayland-satellite
     #gnome-tweaks
     #refine
@@ -145,6 +145,8 @@
     #breeze.qt5   # 要给 Qt5 应用上色才需要
     #breeze-icons
     darkly
+    rustup
+    bibata-cursors
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
@@ -451,5 +453,16 @@ virtualisation.libvirtd = {
 programs.virt-manager.enable = true;
 virtualisation.spiceUSBRedirection.enable = true;
 boot.kernelModules = [ "kvm-amd" ];
+
+#启动动画
+boot.plymouth = {
+    enable = true;
+    theme = "nixos-bgrt";   # 主题,见下文
+    themePackages = [ pkgs.nixos-bgrt-plymouth ];
+    # showDelay = 0.5;  # 可选:让动画晚一点出现,避免快速启动时一闪而过
+  };
+boot.consoleLogLevel = 3;
+boot.kernelParams = [ "quiet" "rd.udev.log_level=3" "rd.systemd.show_status=auto" ];
+boot.initrd.kernelModules = [ "amdgpu" ];
 
 }

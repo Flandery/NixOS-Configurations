@@ -10,6 +10,7 @@
       #./hardware-configuration.nix
       ./hardware-configuration2.nix
       ./233.nix
+      ./others/keyboard_udev.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
