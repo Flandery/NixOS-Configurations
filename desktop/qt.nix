@@ -9,6 +9,7 @@ programs.qtengine = {
       #iconTheme = "breeze-dark";
       style = "darkly";
     };
+    misc.singleClickActivate = false;
   };
 };
 

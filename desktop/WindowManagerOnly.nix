@@ -25,6 +25,7 @@ services.displayManager.noctalia-greeter = {
       size = 24;
       path = pkgs.bibata-cursors;
     };
+    keyboard.numlock = true;
   };
 };
 

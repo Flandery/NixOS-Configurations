@@ -64,7 +64,7 @@ follows_mouse_max_scroll = 0.0
 
 [layout]
 mode = "scrolling"                      # niri 为可滚动的列布局
-gap = 20                                # niri: gaps 20
+gap = 12                                # niri: gaps 20
 extent_presets = [0.333, 0.5, 0.667]    # niri: preset-column-widths 1/3, 1/2, 2/3
 
 [layout.scrolling]
@@ -111,7 +111,7 @@ focus_at_startup = true
 
 [appearance]
 prefer_no_csd = true        # niri: prefer-no-csd
-border_width = 2            # niri: focus-ring width 4
+border_width = 1            # niri: focus-ring width 4
 corner_radius = 16          # niri_rules.kdl: geometry-corner-radius 12
 
 [appearance.blur]

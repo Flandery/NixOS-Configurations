@@ -147,6 +147,8 @@
     darkly
     rustup
     bibata-cursors
+    kdePackages.dolphin
+    codex
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
