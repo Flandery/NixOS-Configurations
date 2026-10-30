@@ -2,18 +2,18 @@
 
 function M.setup()
   require('base16-colorscheme').setup({
-    base00 = '#131407',
-    base01 = '#202013',
-    base02 = '#2a2b1c',
-    base03 = '#929373',
-    base04 = '#c8c9a6',
-    base05 = '#e5e4cd',
-    base06 = '#e5e4cd',
-    base07 = '#e5e4cd',
-    base08 = '#ffb4ab',
-    base09 = '#c7cc79',
-    base0A = '#fcb975',
-    base0B = '#ffb86f',
+    base00 = '#fcfae4',
+    base01 = '#f0efd8',
+    base02 = '#ebe9d3',
+    base03 = '#78795b',
+    base04 = '#47492e',
+    base05 = '#1c1c0f',
+    base06 = '#1c1c0f',
+    base07 = '#1c1c0f',
+    base08 = '#ba1a1a',
+    base09 = '#5e621b',
+    base0A = '#855318',
+    base0B = '#8a5100',
     base0C = '#c7cc79',
     base0D = '#ffb86f',
     base0E = '#fcb975',
@@ -25,28 +25,28 @@ function M.setup()
   end
 
   -- telescope.nvim
-  hi('TelescopeNormal',         { fg = '#e5e4cd',          bg = '#131407' })
-  hi('TelescopeBorder',         { fg = '#929373',             bg = '#131407' })
-  hi('TelescopePromptNormal',   { fg = '#e5e4cd',          bg = '#131407' })
-  hi('TelescopePromptBorder',   { fg = '#929373',             bg = '#131407' })
-  hi('TelescopePromptPrefix',   { fg = '#ffb86f',             bg = '#131407' })
-  hi('TelescopePromptCounter',  { fg = '#c8c9a6',  bg = '#131407' })
-  hi('TelescopePromptTitle',    { fg = '#131407',             bg = '#ffb86f' })
-  hi('TelescopePreviewTitle',   { fg = '#131407',             bg = '#fcb975' })
-  hi('TelescopeResultsTitle',   { fg = '#131407',             bg = '#c7cc79' })
-  hi('TelescopeSelection',      { fg = '#e5e4cd',          bg = '#2a2b1c' })
-  hi('TelescopeSelectionCaret', { fg = '#ffb86f',             bg = '#2a2b1c' })
-  hi('TelescopeMatching',       { fg = '#ffb86f',             bold = true })
+  hi('TelescopeNormal',         { fg = '#1c1c0f',          bg = '#fcfae4' })
+  hi('TelescopeBorder',         { fg = '#78795b',             bg = '#fcfae4' })
+  hi('TelescopePromptNormal',   { fg = '#1c1c0f',          bg = '#fcfae4' })
+  hi('TelescopePromptBorder',   { fg = '#78795b',             bg = '#fcfae4' })
+  hi('TelescopePromptPrefix',   { fg = '#8a5100',             bg = '#fcfae4' })
+  hi('TelescopePromptCounter',  { fg = '#47492e',  bg = '#fcfae4' })
+  hi('TelescopePromptTitle',    { fg = '#fcfae4',             bg = '#8a5100' })
+  hi('TelescopePreviewTitle',   { fg = '#fcfae4',             bg = '#855318' })
+  hi('TelescopeResultsTitle',   { fg = '#fcfae4',             bg = '#5e621b' })
+  hi('TelescopeSelection',      { fg = '#1c1c0f',          bg = '#ebe9d3' })
+  hi('TelescopeSelectionCaret', { fg = '#8a5100',             bg = '#ebe9d3' })
+  hi('TelescopeMatching',       { fg = '#8a5100',             bold = true })
 
   -- mini.pick
-  hi('MiniPickNormal',         { fg = '#e5e4cd',          bg = '#131407' })
-  hi('MiniPickBorder',         { fg = '#929373',             bg = '#131407' })
-  hi('MiniPickPrompt',   { fg = '#e5e4cd',          bg = '#131407' })
-  hi('MiniPickPromptPrefix',   { fg = '#ffb86f',             bg = '#131407' })
-  hi('MiniPickBorderText',    { fg = '#131407',             bg = '#ffb86f' })
-  hi('MiniPickMatchCurrent',      { fg = '#e5e4cd',          bg = '#2a2b1c' })
-  hi('MiniPickPromptCaret', { fg = '#ffb86f',             bg = '#2a2b1c' })
-  hi('MiniPickMatchRanges',       { fg = '#ffb86f',             bold = true })
+  hi('MiniPickNormal',         { fg = '#1c1c0f',          bg = '#fcfae4' })
+  hi('MiniPickBorder',         { fg = '#78795b',             bg = '#fcfae4' })
+  hi('MiniPickPrompt',   { fg = '#1c1c0f',          bg = '#fcfae4' })
+  hi('MiniPickPromptPrefix',   { fg = '#8a5100',             bg = '#fcfae4' })
+  hi('MiniPickBorderText',    { fg = '#fcfae4',             bg = '#8a5100' })
+  hi('MiniPickMatchCurrent',      { fg = '#1c1c0f',          bg = '#ebe9d3' })
+  hi('MiniPickPromptCaret', { fg = '#8a5100',             bg = '#ebe9d3' })
+  hi('MiniPickMatchRanges',       { fg = '#8a5100',             bold = true })
 end
 
 -- Register a signal handler for SIGUSR1 (matugen updates).

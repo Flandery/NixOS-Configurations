@@ -11,7 +11,7 @@
 #  - niri 的 Mod 在 TTY 下等于 Super，这里用 general.mod_key = "Super" 固定
 #  - Umbriel 没有对应动作的 niri 绑定已注释并写明原因（Mod+Ctrl+R / Mod+Ctrl+F / Mod+Ctrl+C）
 #  - niri 的内建截图改为 Noctalia IPC（noctalia msg screenshot-*）
-#  - 动画（animations.kdl 的 NyxNiri 弹簧参数）未迁移，需在 Umbriel 的 [animation] 另行配置
+#  - 动画（animations.kdl 的 NyxNiri 弹簧参数）已迁移到 animations.toml，见 [include.optional]
 #  - 窗口规则只迁移了「全局毛玻璃」与「Noctalia 设置窗口浮动」两条（见下方）
 # =====================================================================
 
@@ -31,7 +31,8 @@ QS_ICON_THEME = "Adwaita"
 # Noctalia 内置的 Umbriel 模板会把主题配色生成到该文件（边框/标题栏/标签栏/overview 等），
 # 效果相当于 niri 里 Noctalia 生成的 noctalia.kdl（边框色 "#5b6000" 等）。
 # 启用方式: Noctalia 设置 → Templates → Compositors → Umbriel
-files = ["noctalia.toml"]
+# animations.toml 放最后，若 Noctalia 模板将来也写 [animation] 则以此处为准
+files = [ "noctalia.toml"]
 
 # =====================================================================
 # 输入设备（niri 的 input / cursor 段）
@@ -319,7 +320,7 @@ blur_optimized = false
 # ---------------------------------------------------------------------
 # * niri 的 scratchpad 窗口规则（app-id=scratchpad）没有对应快捷键；Umbriel 自带 scratchpad，
 #   可用 window-toggle-scratchpad / scratchpad-toggle 等动作自行绑定（Mod+Space 已被浮动切换占用）。
-# * 动画参数（animations.kdl 的 NyxNiri 弹簧曲线）未迁移，可在 Umbriel 的 [animation] 中配置。
+# * 动画参数已迁移到 animations.toml（spring:<damping>,<stiffness> 与 niri 的阻尼比/刚度同义）。
 # * 其余 niri 窗口规则（圆角/透明度、画中画浮动、游戏去特效、WezTerm 等）未迁移，
 #   可按需改写为 [[window_rule]]，参考 https://docs.noctalia.dev/umbriel/window-rules/
 # =====================================================================
