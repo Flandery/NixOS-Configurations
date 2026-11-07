@@ -33,7 +33,7 @@ services.displayManager.noctalia-greeter = {
 xdg.mime.defaultApplications."inode/directory" = "org.kde.dolphin.desktop";
 
 #wm附加
-programs.dms-shell = {
+programs.dux-shell = {
   enable = true;
   systemd = {
     enable = false;             # Systemd service for auto-start

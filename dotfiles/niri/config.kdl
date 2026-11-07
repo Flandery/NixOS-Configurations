@@ -9,7 +9,7 @@
 
 cursor {
 //   //鼠标的光标主题
-    xcursor-theme "Breeze_Light"
+    xcursor-theme "Bibata-Modern-Ice"
 //
 //    //大小
     xcursor-size 27
@@ -196,7 +196,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 2
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -297,6 +297,7 @@ layout {
         // top 64
         // bottom 64
     }
+always-center-single-column true
 }
 
 // Add lines like this to spawn processes at startup.
@@ -432,7 +433,7 @@ binds {
     Mod+Up { focus-workspace-up; }                                                             
     Mod+Down { focus-workspace-down; }                                                         
     //Mod+E { spawn-sh "env GSK_RENDERER=gl GTK_IM_MODULE=fcitx nautilus"; }                     
-    Mod+E { spawn "thunar"; }
+    Mod+E { spawn "dolphin"; }
     Mod+Alt+V {spawn "clipse-gui";}                                                            
     Mod+M { spawn "firefox"; }
     //Mod+D { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }

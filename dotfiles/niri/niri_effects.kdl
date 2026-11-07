@@ -6,7 +6,7 @@ window-rule {
         xray false
     }
     // 圆角
-    geometry-corner-radius 12
+    geometry-corner-radius 10
     // 去掉超出圆角的窗口内容
     clip-to-geometry true
     // 禁止边框画到背景里

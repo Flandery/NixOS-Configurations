@@ -130,8 +130,8 @@
     eza
     nur.repos.mic92.hello-nur
     cliphist
-    opencode-desktop
-    opencode
+    #opencode-desktop   #temporarily disabled
+    #opencode   #temporarily disabled
     mpvpaper
     bottles
     parted
@@ -139,6 +139,7 @@
     inputs.ai-usagebar.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.zcode
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
+    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bsk
     gimp
     chromium
     #breeze #实测没有这个包，下面两个也不存在，该死的AI竟然误导我喵       # qt6 版部件样式
@@ -149,6 +150,9 @@
     bibata-cursors
     kdePackages.dolphin
     codex
+    deepseek-harness
+    bubblewrap
+    mpv
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
@@ -259,8 +263,10 @@ boot.loader.systemd-boot.configurationLimit = 10;
 # do garbage collection weekly to keep disk usage low
 nix.gc = {
   automatic = true;
-  dates = "weekly";
-  options = "--delete-older-than 7d";
+  dates = "daily";
+  options = "--delete-older-than 3d";
+  randomizedDelaySec = "30min";
+  persistent = true;
 };
 # Optimise storage
 # you can also optimise the store manually via:
@@ -271,6 +277,10 @@ nix.settings.auto-optimise-store = true;
 # 设置清理选项：删除超过7天的旧世代
 # nix.gc.options = "--delete-older-than 7d";
 # nix.gc.dates = "weekly";
+nix.optimise = {
+    automatic = true;
+    dates = [ "weekly" ];
+};
 
  # 启用必要的字体服务
  fonts.enableDefaultPackages = true; # 可选项：启用一些基础字体以获得基本的Unicode字符覆盖[citation:1]
@@ -466,5 +476,10 @@ boot.plymouth = {
 boot.consoleLogLevel = 3;
 boot.kernelParams = [ "quiet" "rd.udev.log_level=3" "rd.systemd.show_status=auto" ];
 boot.initrd.kernelModules = [ "amdgpu" ];
+
+#tmp
+nixpkgs.config.problems.handlers = {
+  "gtk+".broken = "warn"; # or "ignore"
+};
 
 }

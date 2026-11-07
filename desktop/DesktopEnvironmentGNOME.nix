@@ -59,7 +59,7 @@ environment.systemPackages = with pkgs; [
  };
 
  #DMS-SHELL
- programs.dms-shell = {
+ programs.dux-shell = {
   enable = true;
 
   systemd = {
