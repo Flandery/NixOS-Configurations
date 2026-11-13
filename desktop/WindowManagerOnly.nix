@@ -46,4 +46,10 @@ environment.systemPackages = with pkgs; [
   inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
 
+#MATE
+services.xserver.enable = true;
+services.xserver.desktopManager.mate.enable=true;
+#services.xserver.displayManager.lightdm.enable=true;
+
+
 }

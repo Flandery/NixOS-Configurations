@@ -1,13 +1,21 @@
 { config, lib, pkgs, inputs, ... }:
 {
- users.users.Flandery = {
+ users.users.FuranYuki = {
      isNormalUser = true;
      extraGroups = [ "wheel" "gamemode" "networkmanager" "libvirtd" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
    #     tree
      ];
    };
- networking.hostName = "FlanderyNixOS"; # Define your hostname.
+ security.sudo.extraRules = [
+  {
+    users = [ "FuranYuki" ];
+    commands = [
+      { command = "ALL"; options = [ "NOPASSWD" ]; }
+    ];
+  }
+];
+ networking.hostName = "FuranYukiNixOS"; # Define your hostname.
  time.timeZone = "Asia/Shanghai";
  environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -34,7 +42,7 @@
     #vimPlugins.nvim-treesitter-parsers.cmake
     lutris
     gcc
-    splayer-next
+    #splayer-next #disabled temporarily
     btop
     go-musicfox
 #    vimPlugins.nvim-treesitter
@@ -130,18 +138,18 @@
     eza
     nur.repos.mic92.hello-nur
     cliphist
-    #opencode-desktop   #temporarily disabled
-    #opencode   #temporarily disabled
+    opencode-desktop   #temporarily disabled
+    opencode   #temporarily disabled
     mpvpaper
     bottles
     parted
     android-tools
     inputs.ai-usagebar.packages.${pkgs.stdenv.hostPlatform.system}.default
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.zcode
-    inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
+    #inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bsk
     gimp
-    chromium
+    #chromium
     #breeze #实测没有这个包，下面两个也不存在，该死的AI竟然误导我喵       # qt6 版部件样式
     #breeze.qt5   # 要给 Qt5 应用上色才需要
     #breeze-icons
@@ -316,6 +324,7 @@ nix.optimise = {
      # 添加其他你需要的引擎，例如：
      # fcitx5-mozc          # 日文输入法
      # fcitx5-hangul        # 韩文输入法
+     (inputs.wetypex.packages.${pkgs.stdenv.hostPlatform.system}.fcitx5-wetypex)
    ];
    # **关键：为 Wayland 环境启用 Wayland 前端支持**
    fcitx5.waylandFrontend = true;
@@ -481,5 +490,14 @@ boot.initrd.kernelModules = [ "amdgpu" ];
 nixpkgs.config.problems.handlers = {
   "gtk+".broken = "warn"; # or "ignore"
 };
+
+#SSD
+boot.initrd.luks.devices."FuranYuki".allowDiscards = true;
+services.fstrim.enable = true;
+services.btrfs.autoScrub.enable = true;
+
+imports = [
+  ./others/proxy.nix
+];
 
 }

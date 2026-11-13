@@ -7,8 +7,8 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      #./hardware-configuration.nix
-      ./hardware-configuration2.nix
+      ./hardware-configuration.nix
+      #./hardware-configuration2.nix
       ./233.nix
       ./others/keyboard_udev.nix
     ];

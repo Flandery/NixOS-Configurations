@@ -1,8 +1,8 @@
 { config, pkgs, inputs, ... }: 
 {
   # 指定此配置用于哪个用户
-  home.username = "Flandery";
-  home.homeDirectory = "/home/Flandery";
+  home.username = "FuranYuki";
+  home.homeDirectory = "/home/FuranYuki";
   # 设置鼠标指针大小以及字体 DPI（适用于 4K 显示器）
   xresources.properties = {
     "Xcursor.size" = 24;
@@ -24,6 +24,7 @@
     ./others/mimeapps.nix   # 文件夹默认用 Dolphin（同时对 Steam 沙箱内生效）
     # 你可以继续导入更多模块
     #./noctalia.nix
+    ./others/rime-ice.nix
   ];
   # 声明要管理的配置文件（启用后，Home Manager 会接管并生成它们）
   #programs.bash = {

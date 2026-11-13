@@ -5,7 +5,7 @@ programs.qtengine = {
   enable = true;
   config = {
     theme = {
-      colorScheme = "${config.users.users.Flandery.home}/.local/share/color-schemes/noctalia.colors";
+      colorScheme = "${config.users.users.FuranYuki.home}/.local/share/color-schemes/noctalia.colors";
       #iconTheme = "breeze-dark";
       style = "darkly";
     };

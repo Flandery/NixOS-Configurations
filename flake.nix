@@ -1,8 +1,8 @@
 {
-  description = "NixOS configuration with Noctalia";
+  description = "FuranYuki's NixOS configuration!";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
     nixpkgsStable.url = "github:nixos/nixpkgs/nixos-26.05";
     #niri.url = "github:sodiboo/niri-flake";
     niri = {
@@ -36,6 +36,10 @@
       url = "github:noctalia-dev/noctalia-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    wetypex = {
+      url = "github:panxuc/fcitx5-wetypex";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: let
@@ -45,11 +49,11 @@
     };
   in {
     packages.x86_64-linux.zcode = DIYpkgs.callPackage ./packages/zcode/package.nix { };
-    packages.x86_64-linux.cnmplayer = DIYpkgs.callPackage ./packages/cnmplayer/package.nix { };
+    #packages.x86_64-linux.cnmplayer = DIYpkgs.callPackage ./packages/cnmplayer/package.nix { };
     packages.x86_64-linux.plasma-smart-video-wallpaper-reborn = DIYpkgs.callPackage ./packages/plasma-smart-video-wallpaper-reborn/package.nix { };
     packages.x86_64-linux.bsk = DIYpkgs.callPackage ./packages/bsk/package.nix { };
     nixosConfigurations = {
-     FlanderyNixOS-GNOME = nixpkgs.lib.nixosSystem {
+     FuranYukiNixOS-GNOME = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # 或者 "aarch64-linux" 等
       specialArgs = { inherit inputs; };
       modules = [
@@ -76,7 +80,7 @@
 
         # 这里的 ryan 也得替换成你的用户名
         # 这里的 import 函数在前面 Nix 语法中介绍过了，不再赘述
-         home-manager.users.Flandery = import ./home.nix;
+         home-manager.users.FuranYuki = import ./home.nix;
 
         # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
         # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
@@ -84,7 +88,7 @@
          }
        ];
       };
-     FlanderyNixOS-KDE = nixpkgs.lib.nixosSystem {
+     FuranYukiNixOS-KDE = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # 或者 "aarch64-linux" 等
       specialArgs = { inherit inputs; };
       modules = [
@@ -111,7 +115,7 @@
 
         # 这里的 ryan 也得替换成你的用户名
         # 这里的 import 函数在前面 Nix 语法中介绍过了，不再赘述
-         home-manager.users.Flandery = import ./home.nix;
+         home-manager.users.FuranYuki = import ./home.nix;
 
         # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
         # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
@@ -119,7 +123,7 @@
          }
        ];
       };
-    FlanderyNixOS-WM = nixpkgs.lib.nixosSystem {
+    FuranYukiNixOS-WM = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux"; # 或者 "aarch64-linux" 等
       specialArgs = { inherit inputs; };
       modules = [
@@ -147,7 +151,7 @@
 
         # 这里的 ryan 也得替换成你的用户名
         # 这里的 import 函数在前面 Nix 语法中介绍过了，不再赘述
-         home-manager.users.Flandery = import ./home.nix;
+         home-manager.users.FuranYuki = import ./home.nix;
 
         # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
         # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
