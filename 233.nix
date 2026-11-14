@@ -117,7 +117,7 @@
     kazumi
     btrfs-assistant
 #    upscaler
-    activate-linux
+    #activate-linux
     discord
     iptables
     #iptables-legacy
@@ -149,7 +149,7 @@
     #inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.cnmplayer
     inputs.self.packages.${pkgs.stdenv.hostPlatform.system}.bsk
     gimp
-    #chromium
+    chromium
     #breeze #实测没有这个包，下面两个也不存在，该死的AI竟然误导我喵       # qt6 版部件样式
     #breeze.qt5   # 要给 Qt5 应用上色才需要
     #breeze-icons
@@ -161,6 +161,10 @@
     deepseek-harness
     bubblewrap
     mpv
+    kdePackages.partitionmanager
+    parted
+    exfatprogs
+    ntfs3g
   ];
 # services = {
 #  desktopManager.plasma6.enable = true;
@@ -210,11 +214,8 @@
  
 #杂项
  nixpkgs.config.allowUnfree = true;
- programs.clash-verge.enable = true;
- programs.clash-verge.tunMode = true;
  programs.firefox.enable = true;
  programs.fish.enable = true;
- programs.clash-verge.serviceMode = true;
  networking.firewall.enable = false;
  #虚拟机桥接网络
  networking.networkmanager.ensureProfiles.profiles = {
@@ -498,6 +499,8 @@ services.btrfs.autoScrub.enable = true;
 
 imports = [
   ./others/proxy.nix
+  ./others/swap.nix
+  ./others/zfs.nix
 ];
 
 }

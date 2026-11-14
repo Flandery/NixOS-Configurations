@@ -24,7 +24,7 @@
     ./others/mimeapps.nix   # 文件夹默认用 Dolphin（同时对 Steam 沙箱内生效）
     # 你可以继续导入更多模块
     #./noctalia.nix
-    ./others/rime-ice.nix
+    #./others/rime-ice.nix
   ];
   # 声明要管理的配置文件（启用后，Home Manager 会接管并生成它们）
   #programs.bash = {

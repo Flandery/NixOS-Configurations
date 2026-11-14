@@ -2,7 +2,7 @@
   description = "FuranYuki's NixOS configuration!";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgsStable.url = "github:nixos/nixpkgs/nixos-26.05";
     #niri.url = "github:sodiboo/niri-flake";
     niri = {
